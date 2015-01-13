@@ -1,0 +1,77 @@
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+
+import java.util.List;
+
+import logica.Asesor;
+import logica.Cliente;
+import logica.Controlador;
+import logica.Piso;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import persistencia.ConnectionManager;
+import presentacion.CrearPisoJDialog;
+import excepciones.DAOExcepcion;
+import excepciones.LogicaExcepcion;
+
+/**
+ * @author Pau Alario
+ * 
+ * Crear Piso sin seleccionar venta o alquiler
+ */
+
+public class CrearPisoJDialogTest_Bug528 {
+	String numHab;
+	Controlador controlador;
+	CrearPisoJDialog piso;
+	Cliente cli;
+	Asesor ase;
+	Piso pi;
+	List <Piso> listaPisos;
+	
+	 @Before
+	    public void inicializar() {
+		 	controlador = Controlador.dameControlador();
+		 	
+		 	piso = new CrearPisoJDialog(controlador);
+			piso.getContentPane().setVisible(false);
+	    }
+
+	@Test
+	public void testCrearPisoJDialog() {
+		
+
+			piso.botonOk();
+			assertFalse("El piso no debería de haberse creado sin seleccionar venta o alquiler", 
+					piso.selected());
+
+		
+	}
+	
+	@After
+    public void after(){
+    	try{
+    		ConnectionManager connManager = new ConnectionManager("practicaFinal");
+            connManager.connect();
+            
+            connManager.updateDB("delete from PISO where COD_ID='" + "" + "'");
+            connManager.updateDB("delete from INMUEBLE where COD_ID='" + "" + "'");
+            connManager.updateDB("delete from ASESOR where CODIGO_EMPLEADO='" + ""+ "'");
+            connManager.updateDB("delete from CLIENTE where NIF_CLIENTE='" + "" + "'");
+            
+            connManager.close();
+    	}
+    	catch (ClassNotFoundException ex) {
+            ex.printStackTrace();
+        }
+    	
+    	catch(DAOExcepcion ex){
+    		ex.printStackTrace();    		
+    	}
+    }
+
+}

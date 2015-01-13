@@ -1,0 +1,360 @@
+package logica;
+
+import java.util.List;
+import persistencia.DAL;
+import excepciones.DAOExcepcion;
+import excepciones.LogicaExcepcion;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
+public final class Controlador {
+
+	private DAL dal;
+
+	// Creacion del controlador
+	// Un unico controlador para todos los C.U.
+	private Controlador() throws LogicaExcepcion {
+		try {
+			// Objeto para comunicarse con la capa de acceso a datos
+			dal = DAL.getDAL();
+
+		} catch (DAOExcepcion e) {
+			throw new LogicaExcepcion(e);
+		}
+
+	}
+
+	// ***Patron singleton para que unicamente exista una instancia del
+	// controlador.***
+
+	static private Controlador controlador = null;
+
+	public static Controlador dameControlador() {
+		if (controlador == null) {
+			try {
+				controlador = new Controlador();
+			} catch (LogicaExcepcion e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return controlador;
+	}
+
+	// Para el C.U. Crear Pisos
+
+	public void crearPiso(Piso p) throws LogicaExcepcion {
+		try {
+			if (dal.encontrarPisoPorCod(p.getCodId()) == null)
+				dal.crearPiso(p);
+			else
+				throw new LogicaExcepcion("El Piso ya existe\n Cree uno nuevo");
+		} catch (DAOExcepcion e) {
+			throw new LogicaExcepcion(e);
+		}
+	}
+
+	// Si la fecha coincide con el formato dd/MM/yyyy -> es correcta
+	private boolean fechaCorrecta(String fecha) throws LogicaExcepcion {
+		if (!fecha.matches("([0-9]{2})/([0-9]{2})/([0-9]{4})")) {
+			return false;
+		}
+		SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+		df.setLenient(false);
+		try {
+			// Comprueba si se ha introducido una fecha válida (ejemplo: mes
+			// [1-12])
+			df.parse(fecha);
+			return true;
+		} catch (ParseException ex) {
+			throw new LogicaExcepcion("La fecha introducida no es válida");
+			// return false;
+		}
+	}
+
+	// Para el C.U Crear Visita
+	public void crearVisita(Visita pi) throws LogicaExcepcion {
+		if (!fechaCorrecta(pi.getFecha()))
+			throw new LogicaExcepcion(
+					"El campo fecha no tiene el formato correcto dd/MM/yyyy");
+		if (pi.getCod().equals(""))
+			throw new LogicaExcepcion("El campo código no puede estar vacío");
+
+		try {
+
+			// Puede ser que un cliente visite el mismo inmueble dos veces el
+			// mismo dia
+			// y queramos registrarlo en la base de datos.
+			if (dal.encontrarVisitaPorCod(pi.getCod()) == null)
+				dal.crearVisita(pi);
+			else
+				throw new LogicaExcepcion(
+						"Ya hay una Visita con ese código\n Cree otra");
+		} catch (DAOExcepcion e) {
+			throw new LogicaExcepcion(e);
+		}
+	}
+
+	// Para el C.U. Crear Inmuebles(EncontrarInmueblePorCod aun no funca).
+
+	public void crearInmueble(Inmueble pi) throws LogicaExcepcion {
+		try {
+			if (dal.encontrarInmueblePorCod(pi.getCodId()) == null)
+				dal.crearInmueble(pi);
+			else
+				throw new LogicaExcepcion(
+						"El Inmueble ya existe\n Cree uno nuevo");
+		} catch (DAOExcepcion e) {
+			throw new LogicaExcepcion(e);
+		}
+	}
+
+	// Para el C.U. Crear asesor.
+	public void crearAsesor(Asesor pi) throws LogicaExcepcion {
+		try {
+			if (dal.encontrarAsesorPorCod(pi.getCodigoEmp()) == null)
+				dal.crearAsesor(pi);
+			else
+				throw new LogicaExcepcion(
+						"El Asesor ya existe\n Cree uno nuevo");
+		} catch (DAOExcepcion e) {
+			throw new LogicaExcepcion(e);
+		}
+	}
+
+	// Para el C.U. Crear Clientes.
+	public void crearCliente(Cliente pi) throws LogicaExcepcion {
+		try {
+			if (dal.encontrarClientePorCod(pi.getNif()) == null)
+				dal.crearCliente(pi);
+			else
+				throw new LogicaExcepcion(
+						"El Cliente ya existe\n Cree uno nuevo");
+		} catch (DAOExcepcion e) {
+			throw new LogicaExcepcion(e);
+		}
+	}
+
+	// Para el C.U. Crear Oferta.
+	public void crearOferta(Oferta vi) throws LogicaExcepcion {
+		// TODO Auto-generated method stub
+		boolean crear = false;
+
+		try {
+			// Lista con las ofertas de la base de datos.
+			List<Oferta> listaOfertas = encontrarOfertas();
+
+			// Si no existe ninguna oferta con ese código se creara si se cumple
+			// lo siguiente.
+			if (dal.encontrarOfertaPorCod(vi.getCod()) == null) {
+				// Si hay alguna oferta hay que comprobar más cosas, sinos se
+				// crea.
+				if (listaOfertas.size() > 0) {
+
+					for (int i = 0; i < listaOfertas.size(); i++) {
+
+						// Si hay alguna oferta en la base de datos con el mismo
+						// código de visita que la actual
+						// no se crea, ya que solo puede existir una oferta por
+						// visita.
+						if (listaOfertas.get(i).getVisita().getCod().trim()
+								.equals(vi.getVisita().getCod().trim())) {
+							throw new LogicaExcepcion(
+									"Ya hay una oferta para esa visita\n No se pueden crear más");
+
+						}
+
+					}// Fin del for para comparar con todas las ofertas.
+						// Fin del if que mira si hay alguna oferta en la base
+						// de datos. (Si no hay ninguna se crea)
+				} else {
+					dal.crearOferta(vi);
+					crear = true;
+				}
+
+			}// Fin del if para comprobar ofertas con mismo código.
+			else {
+				throw new LogicaExcepcion(
+						"Ya hay una oferta con ese código\n Cree otra");
+			}
+
+			if (crear == false) {
+				dal.crearOferta(vi);
+			}
+
+		} catch (DAOExcepcion e1) {
+			throw new LogicaExcepcion(e1);
+		}
+	}// Fin de CrearOferta.
+
+	// Para el C.U. Crear Transacción.
+	public void crearTransaccion(Transaccion vi) throws LogicaExcepcion {
+		// TODO Auto-generated method stub
+		boolean crear = false;
+		try {
+			// Lista con las transacciones de la base de datos.
+			List<Transaccion> listaTransacciones = encontrarTransaccion();
+
+			if (dal.encontrarTransaccionPorCod(vi.getCod()) == null) {
+
+				if (listaTransacciones.size() > 0) {
+
+					for (int i = 0; i < listaTransacciones.size(); i++) {
+
+						if (listaTransacciones.get(i).getOferta().getCod()
+								.trim().equals(vi.getOferta().getCod().trim())) {
+							throw new LogicaExcepcion(
+									"Ya hay una transaccion para esa oferta\n No se pueden crear más");
+						}
+
+					}// Fin del for para comparar todas las transacciones.
+						// Fin del if que mira si hay alguna transaccion en la
+						// base de datos(Si no hay se crea).
+				} else {
+					dal.crearTransaccion(vi);
+					crear = true;
+				}
+
+			}// Fin del if para comprobar transacciones con el mismo código.
+			else
+				throw new LogicaExcepcion(
+						"Ese Código de Transacción ya existe\n Cree una nueva");
+
+			if (crear == false) {
+				dal.crearTransaccion(vi);
+			}
+
+		} catch (DAOExcepcion e) {
+			throw new LogicaExcepcion(e);
+		}
+
+	}// Fin de Crear Transacción.
+
+	// Para el C.U. CrearNaveIndustrial.
+	public void crearNaveIndustrial(NaveIndustrial pi) throws LogicaExcepcion {
+		// TODO Auto-generated method stub
+		try {
+			if (dal.encontrarNaveIndustrialPorCod(pi.getCodId()) == null)
+				dal.crearNaveIndustrial(pi);
+			else
+				throw new LogicaExcepcion(
+						"Esa Nave Industrial ya existe\n Cree una nueva");
+		} catch (DAOExcepcion e) {
+			throw new LogicaExcepcion(e);
+		}
+	}
+
+	// Para el C.U. Consultar Inmuebles
+	public List<Inmueble> encontrarInmuebles() throws LogicaExcepcion {
+		try {
+			return dal.encontrarInmuebles();
+
+		} catch (DAOExcepcion e) {
+			throw new LogicaExcepcion(e);
+		}
+	}
+
+	// Encontrar Asesores en controlador.
+	public List<Asesor> encontrarAsesores() throws LogicaExcepcion {
+		try {
+			return dal.encontrarAsesores();
+
+		} catch (DAOExcepcion e) {
+			throw new LogicaExcepcion(e);
+		}
+	}
+
+	// Encontrar Clientes en controlador.
+	public List<Cliente> encontrarCliente() throws LogicaExcepcion {
+		// TODO Auto-generated method stub
+		try {
+			return dal.encontrarClientes();
+		} catch (DAOExcepcion e) {
+			throw new LogicaExcepcion(e);
+		}
+	}
+
+	// Encontrar Pisos en controlador.
+	public List<Piso> encontrarPisos() throws LogicaExcepcion {
+		// TODO Auto-generated method stub
+		try {
+			return dal.encontrarPisos();
+		} catch (DAOExcepcion e) {
+			throw new LogicaExcepcion(e);
+		}
+	}
+
+	// Encontrar NaveIndustrial en controlador.
+	public List<NaveIndustrial> encontrarNaveIndustrial()
+			throws LogicaExcepcion {
+		// TODO Auto-generated method stub
+		try {
+			return dal.encontrarNaveIndustrial();
+		} catch (DAOExcepcion e) {
+			throw new LogicaExcepcion(e);
+		}
+	}
+
+	public List<Visita> encontrarVisitas() throws LogicaExcepcion {
+		// TODO Auto-generated method stub
+		try {
+			return dal.encontrarVisita();
+		} catch (DAOExcepcion e) {
+			throw new LogicaExcepcion(e);
+		}
+	}
+
+	public List<Transaccion> encontrarTransaccion() throws LogicaExcepcion {
+		// TODO Auto-generated method stub
+		try {
+			return dal.encontrarTransaccion();
+		} catch (DAOExcepcion e) {
+			throw new LogicaExcepcion(e);
+		}
+	}
+
+	public List<Oferta> encontrarOfertas() throws LogicaExcepcion {
+		// TODO Auto-generated method stub
+		try {
+			return dal.encontrarOfertas();
+		} catch (DAOExcepcion e) {
+			throw new LogicaExcepcion(e);
+		}
+	}
+
+	public Visita encontrarVisitaPorCod(String text) throws LogicaExcepcion {
+		// TODO Auto-generated method stub
+		try {
+			return dal.encontrarVisitaPorCod(text);
+		} catch (DAOExcepcion e) {
+			throw new LogicaExcepcion(e);
+		}
+	}
+
+	public Asesor encontrarAsesorPorCod(String i) throws LogicaExcepcion {
+		try {
+			return dal.encontrarAsesorPorCod(i);
+		} catch (DAOExcepcion e) {
+			throw new LogicaExcepcion(e);
+		}
+	}
+
+	public Cliente encontrarClientePorCod(String cli) throws LogicaExcepcion {
+		// TODO Auto-generated method stub
+		try {
+			return dal.encontrarClientePorCod(cli);
+		} catch (DAOExcepcion e) {
+			throw new LogicaExcepcion(e);
+		}
+	}
+
+	public Oferta encontrarOfertaPorCod(String c) throws LogicaExcepcion {
+		// TODO Auto-generated method stub
+		try {
+			return dal.encontrarOfertaPorCod(c);
+		} catch (DAOExcepcion e) {
+			throw new LogicaExcepcion(e);
+		}
+	}
+
+}// Fin de controlador.

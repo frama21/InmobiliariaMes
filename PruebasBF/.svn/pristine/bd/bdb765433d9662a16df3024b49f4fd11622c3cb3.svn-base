@@ -1,0 +1,75 @@
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import excepciones.DAOExcepcion;
+import excepciones.LogicaExcepcion;
+import persistencia.ConnectionManager;
+import presentacion.CrearCliente;
+import logica.Controlador;
+
+
+
+/**
+ * @author Fran Martí
+ * 
+ * Crear cliente con los campos vacíos
+ * 
+ */
+
+public class CrearClienteTest_Bug535 {
+
+	Controlador controlador;
+    ConnectionManager conexion;
+    String nif;
+    String nombre;
+    String apellidos;
+    CrearCliente cli;
+    
+    @Before
+    public void inicializar() {
+    	nif="";
+    	nombre="";
+    	apellidos=""; 
+    	
+    	controlador = Controlador.dameControlador();
+        
+        cli = new CrearCliente(controlador);
+        
+        cli.setCampos(nif, nombre, apellidos);
+        
+    }
+    
+    @Test
+    public void testCrearCliente() {
+    	try{
+	    	cli.botonOk();
+	    	fail("El método debería de haber fallado");
+    	}
+    	catch(LogicaExcepcion e){
+    		assertTrue(true);
+    	}
+    }
+    
+    @After
+    public void after(){
+    	try{
+    		ConnectionManager connManager = new ConnectionManager("practicaFinal");
+            connManager.connect();
+            
+            connManager.updateDB("delete from cliente where nif_cliente='" + nif + "'");
+            
+            connManager.close();
+    	}
+    	catch (ClassNotFoundException ex) {
+            ex.printStackTrace();
+        }
+    	
+    	catch(DAOExcepcion ex){
+    		ex.printStackTrace();    		
+    	}
+    }
+
+}

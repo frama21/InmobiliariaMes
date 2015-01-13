@@ -1,0 +1,74 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+import excepciones.DAOExcepcion;
+import excepciones.LogicaExcepcion;
+import logica.Asesor;
+import logica.Cliente;
+import logica.Controlador;
+import logica.Inmueble;
+import logica.Visita;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import static org.junit.Assert.*;
+import persistencia.ConnectionManager;
+import presentacion.NuevaVisita;
+
+/**
+ *
+ * @author joseph
+ */
+public class NuevaVisitaTest_Bug516 {    
+    Controlador controlador; 
+    Inmueble inmueble;
+    Asesor asesor;
+    Cliente cliente;
+    NuevaVisita nv;  
+    Visita visita;
+    
+    @Before
+    public void inicializar() {
+        controlador = Controlador.dameControlador();
+//        nv = new NuevaVisita(controlador);
+        // Formato de fecha incorrecto
+//        nv.setFecha("uno de enero de 2015"); 
+//        nv.getContentPane().setVisible(false);
+        
+        cliente = new Cliente("12345678A", "Antonio", "Manostijeras");
+        asesor = new Asesor("0001", "Paquito");
+        inmueble = new Inmueble("1111", "Calle falsa", "localidad falsa", "1/1/1980", "80m2", "venta", asesor, cliente);
+        visita = new Visita("prueba516", "uno de enero de 2015", inmueble, asesor, cliente);
+    }
+
+    @Test
+    public void test() {               
+        try{
+            controlador.crearVisita(visita);
+            fail("El método debería haber fallado!");
+        }
+        catch(LogicaExcepcion e){
+            assertTrue(true);
+        }
+    }
+    
+    @After
+    public void eliminar(){
+        try{
+            ConnectionManager connManager = new ConnectionManager("practicaFinal");
+            connManager.connect();
+            
+            connManager.updateDB("delete from visita where cod_visita='" + visita.getCod() + "'");
+            
+            connManager.close();
+        } catch (ClassNotFoundException ex) {
+            ex.printStackTrace();
+        }
+        catch(DAOExcepcion ex2){
+            ex2.printStackTrace();
+        }
+    }
+}

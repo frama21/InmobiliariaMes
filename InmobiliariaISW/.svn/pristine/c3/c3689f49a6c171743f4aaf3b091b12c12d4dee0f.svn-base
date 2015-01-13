@@ -1,0 +1,26 @@
+package logica;
+
+public class BajoComercial extends Inmueble {
+	private String numPuertas;
+
+	
+	public BajoComercial(String unCodigo, String unaCalle, String unaLocalidad,
+			String unaFechaAlta, String unaSuperficieTot,
+			String unaVentaAlquiler, String unNumPuertas, Asesor unAsesor,
+			Cliente unCliente) {
+		super(unCodigo, unaCalle, unaLocalidad, unaFechaAlta, unaSuperficieTot,
+				unaVentaAlquiler, unAsesor, unCliente);
+
+		numPuertas = unNumPuertas;
+	}
+
+	
+	public void setNumPuertas(String np) {
+		numPuertas = np;
+	}
+
+	
+	public String getNumPuertas() {
+		return numPuertas;
+	}
+}// Fin de la clase.

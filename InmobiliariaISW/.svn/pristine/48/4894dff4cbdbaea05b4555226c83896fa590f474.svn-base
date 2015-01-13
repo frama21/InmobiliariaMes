@@ -1,0 +1,361 @@
+package presentacion;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+import javax.swing.JSeparator;
+import logica.Controlador;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JButton;
+import java.awt.Font;
+
+
+public class InmobiliariaApp {
+
+	private JFrame frame;
+	private Controlador control;
+
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					InmobiliariaApp window = new InmobiliariaApp();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public InmobiliariaApp() {
+		initialize();
+
+		initDominio();
+
+	}
+
+	//Inicialización de los objetos necesarios de la capa de negocio
+	private void initDominio() {
+		try{
+			control = Controlador.dameControlador();
+		}catch (Exception e){
+			System.out.println(e.getMessage());
+		}
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//Titulo del Jframe.
+		frame.setTitle("INMOBILIARIA");
+
+		JMenuBar menuPrin = new JMenuBar();
+		frame.setJMenuBar(menuPrin);
+
+		JMenu mnInmuebles = new JMenu("Inmuebles");
+		menuPrin.add(mnInmuebles);
+
+		JMenuItem mntmCrearPiso = new JMenuItem("Crear piso");
+		mntmCrearPiso.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				CrearPisoJDialog cur  = new CrearPisoJDialog(control);
+				cur.setModal(true);
+				cur.setVisible(true);
+			}
+		});
+		mnInmuebles.add(mntmCrearPiso);
+
+		JMenuItem mntmCrearNaveIndustrial = new JMenuItem("Crear nave industrial");
+		mntmCrearNaveIndustrial.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				CrearNaveIndustrial cur = new CrearNaveIndustrial(control);
+				cur.setModal(true);
+				cur.setVisible(true);
+			}
+		});
+		mnInmuebles.add(mntmCrearNaveIndustrial);
+
+		JMenuItem mntmConsultarInmueble = new JMenuItem("Consultar Pisos");
+		mntmConsultarInmueble.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+
+				ConsultaPisosJDialog cur  = new ConsultaPisosJDialog(control);
+				cur.setModal(true);
+				cur.cargaInmuebles();
+				cur.setVisible(true);
+
+			}
+
+		});
+		mnInmuebles.add(mntmConsultarInmueble);
+
+		JMenuItem mntmNaveIndustrial = new JMenuItem("Consultar NavesIndustriales");
+		mntmNaveIndustrial.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				ConsultarNaveIndustrial cur = new ConsultarNaveIndustrial(control);
+				cur.setModal(true);
+				cur.cargaNaves();
+				cur.setVisible(true);
+			}
+		});
+		mnInmuebles.add(mntmNaveIndustrial);
+
+		JMenuItem mntmConsultarInmuebles = new JMenuItem("Consultar Inmuebles no v/a ");
+		mntmConsultarInmuebles.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				ConsultarInmueblesNo cur = new ConsultarInmueblesNo(control);
+				cur.setModal(true);
+				cur.cargaPisos();
+				cur.cargaNavesIndustriales();
+				cur.setVisible(true);
+			}
+		});
+		mnInmuebles.add(mntmConsultarInmuebles);
+
+		JSeparator separator = new JSeparator();
+		mnInmuebles.add(separator);
+
+		JMenuItem mntmSalir = new JMenuItem("Salir");
+		mntmSalir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//Cierra todo el programa.
+				System.exit(0);
+			}
+		});
+		mnInmuebles.add(mntmSalir);
+
+		JMenu mnAsesor = new JMenu("Asesores");
+		menuPrin.add(mnAsesor);
+
+		JMenuItem mntmCrearAsesor = new JMenuItem("Crear Asesor");
+		mntmCrearAsesor.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				//Event handler para ir a la creación de asesores.
+				CrearAsesor cur1  = new CrearAsesor(control);
+				cur1.setModal(true);
+				cur1.setVisible(true);
+
+			}
+		});
+		mnAsesor.add(mntmCrearAsesor);
+
+		JMenuItem mntmConsultarAsesor = new JMenuItem("Consultar Asesor por Inmueble");
+		mntmConsultarAsesor.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ConsultarAsesores cur = new ConsultarAsesores(control);
+				cur.setModal(true);
+				cur.setVisible(true);
+
+			}
+		});
+		mnAsesor.add(mntmConsultarAsesor);
+
+		JMenuItem mntmNewMenuItem = new JMenuItem("Consultar Asesores");
+		mntmNewMenuItem.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				ConsultarTodosAsesores cur = new ConsultarTodosAsesores(control);
+				cur.setModal(true);
+				cur.cargaTodosAsesores();
+				cur.setVisible(true);
+			}
+		});
+		mnAsesor.add(mntmNewMenuItem);
+
+		JMenuItem mntmSalir2 = new JMenuItem("Salir");
+		mntmSalir2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//Cierra el programa.
+				System.exit(0);
+			}
+		});
+
+		JSeparator separator_3 = new JSeparator();
+		mnAsesor.add(separator_3);
+		mnAsesor.add(mntmSalir2);
+
+		JMenu mnNewMenu = new JMenu("Cliente");
+		menuPrin.add(mnNewMenu);
+
+		JMenuItem mntmCrearCliente = new JMenuItem("Crear Cliente");
+		mntmCrearCliente.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				//Event handler para ir a la creación de asesores.
+				CrearCliente cur2  = new CrearCliente(control);
+				cur2.setModal(true);
+				cur2.setVisible(true);
+			}
+		});
+		mnNewMenu.add(mntmCrearCliente);
+
+		JMenuItem mntmConsultarCliente = new JMenuItem("Consultar Cliente por Inmueble");
+		mntmConsultarCliente.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				ConsultarClientes cur = new ConsultarClientes(control);
+				cur.setModal(true);
+				cur.setVisible(true);
+			}
+		});
+		mnNewMenu.add(mntmConsultarCliente);
+
+		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Consultar Clientes");
+		mntmNewMenuItem_1.setFont(new Font("Segoe UI", Font.BOLD, 12));
+		mntmNewMenuItem_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				ConsultarTodosClientes cur = new ConsultarTodosClientes(control);
+				cur.setModal(true);
+				cur.cargaTodosClientes();
+				cur.setVisible(true);
+			}
+		});
+		mnNewMenu.add(mntmNewMenuItem_1);
+
+		JSeparator separator_2 = new JSeparator();
+		mnNewMenu.add(separator_2);
+
+		JMenuItem mntmSalir3 = new JMenuItem("Salir");
+		mntmSalir3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//Salir del programa
+				System.exit(0);
+			}
+		});
+		mnNewMenu.add(mntmSalir3);
+		
+		JMenu mnVisitas = new JMenu("Visitas");
+		menuPrin.add(mnVisitas);
+		
+				JMenuItem mntmCrearVisita = new JMenuItem("Crear Visita");
+				mnVisitas.add(mntmCrearVisita);
+				
+						JMenuItem mntmNewMenuItem_2 = new JMenuItem("Consultar Visitas/Ofertas");
+						mnVisitas.add(mntmNewMenuItem_2);
+						
+						JSeparator separator_4 = new JSeparator();
+						mnVisitas.add(separator_4);
+						
+						JMenuItem menuItem_1 = new JMenuItem("Salir");
+						menuItem_1.addActionListener(new ActionListener() {
+							public void actionPerformed(ActionEvent arg0) {
+								//Salir del programa
+								System.exit(0);
+							}
+						});
+						mnVisitas.add(menuItem_1);
+						mntmNewMenuItem_2.addActionListener(new ActionListener() {
+							public void actionPerformed(ActionEvent arg0) {
+								ConsultarVisitaOferta cur = new ConsultarVisitaOferta(control);
+								cur.setModal(true);
+								//cur.cargaInmueblesVisita();
+								//cur.cargaInmueblesOferta();
+								cur.setVisible(true);
+
+							}
+						});
+				mntmCrearVisita.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						//Event handler para ir a la creación de visitas.
+						NuevaVisita cur1  = new NuevaVisita(control);
+						cur1.setModal(true);
+						cur1.setVisible(true);
+
+					}
+				});
+		
+		JMenu mnOfertas = new JMenu("Ofertas");
+		menuPrin.add(mnOfertas);
+		
+				JMenuItem mntmCrearoferta = new JMenuItem("CrearOferta");
+				mnOfertas.add(mntmCrearoferta);
+				
+				JMenuItem menuItem = new JMenuItem("Consultar Visitas/Ofertas");
+				menuItem.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						ConsultarVisitaOferta cur = new ConsultarVisitaOferta(control);
+						cur.setModal(true);
+						//cur.cargaInmueblesVisita();
+						//cur.cargaInmueblesOferta();
+						cur.setVisible(true);
+					}
+				});
+				mnOfertas.add(menuItem);
+				
+				JSeparator separator_5 = new JSeparator();
+				mnOfertas.add(separator_5);
+				
+				JMenuItem menuItem_2 = new JMenuItem("Salir");
+				menuItem_2.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						//Salir del programa
+						System.exit(0);
+					}
+				});
+				mnOfertas.add(menuItem_2);
+				mntmCrearoferta.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+
+						//Event handler para ir a la creación de ofertas.
+						NuevaOferta cur1  = new NuevaOferta(control);
+						cur1.setModal(true);
+						cur1.setVisible(true);
+					}
+				});
+		
+		JMenu mnTransaccion = new JMenu("Transacciones");
+		menuPrin.add(mnTransaccion);
+		
+				JMenuItem mntmCrearVentaalquiler = new JMenuItem("Crear Venta/Alquiler");
+				mnTransaccion.add(mntmCrearVentaalquiler);
+				
+				JSeparator separator_6 = new JSeparator();
+				mnTransaccion.add(separator_6);
+				
+				JMenuItem menuItem_3 = new JMenuItem("Salir");
+				menuItem_3.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						System.exit(0);
+					}
+				});
+				mnTransaccion.add(menuItem_3);
+				mntmCrearVentaalquiler.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						
+						//Event handler para nuevaTransaccion.
+						NuevaTransaccion cur = new NuevaTransaccion(control);
+						cur.setModal(true);
+						cur.setVisible(true);
+					}
+				});
+		frame.getContentPane().setLayout(null);
+
+		JButton btnNewButton = new JButton("Creado Por");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//Event handler para ir a Creado Por.
+				CreadoPor cur2  = new CreadoPor();
+				cur2.setModal(true);
+				cur2.setVisible(true);
+			}
+		});
+		btnNewButton.setBounds(161, 207, 123, 23);
+		frame.getContentPane().add(btnNewButton);
+	}
+}//Fin de Inmobiliaria.

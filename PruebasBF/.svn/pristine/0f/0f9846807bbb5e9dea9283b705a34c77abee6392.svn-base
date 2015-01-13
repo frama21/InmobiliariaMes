@@ -1,0 +1,74 @@
+import static org.junit.Assert.*;
+import logica.Asesor;
+import logica.Cliente;
+import logica.Controlador;
+import logica.NaveIndustrial;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import excepciones.DAOExcepcion;
+import excepciones.LogicaExcepcion;
+import persistencia.ConnectionManager;
+
+/**
+ * @author Fran Martí
+ * 
+ * Campo de codigo nave industrial
+ */
+public class CrearNaveIndustrialTest_Bug537 {
+	
+	String cod;
+    NaveIndustrial nv;
+    Controlador controlador;
+    Cliente cli;
+    Asesor ase;
+    
+    @Before
+    public void inicializar() {
+    	cod = "";
+    	controlador = Controlador.dameControlador();
+    	
+    	cli = new Cliente("125", "Juan","ape");
+    	ase = new Asesor("12356", "Asesor 12");
+    	
+    	nv = new NaveIndustrial(cod,"calle","localidad", "1/01/2013", "200", "venta", "5", "calif", ase, cli);
+    }
+
+	@Test
+	public void testCrearNaveIndustrial() {
+		try{
+			controlador.crearAsesor(ase);
+			controlador.crearCliente(cli);
+			controlador.crearNaveIndustrial(nv);
+	    	fail("El método debería de haber fallado");
+    	}
+    	catch(LogicaExcepcion e){
+    		assertTrue(true);
+    	}
+	}
+	
+	@After
+    public void after(){
+    	try{
+    		ConnectionManager connManager = new ConnectionManager("practicaFinal");
+            connManager.connect();
+            
+            connManager.updateDB("delete from NAVEINDUSTRIAL where COD_ID='" + nv.getCod_Id() + "'");
+            connManager.updateDB("delete from INMUEBLE where COD_ID='" + nv.getCod_Id() + "'");
+            connManager.updateDB("delete from ASESOR where CODIGO_EMPLEADO='" + ase.getCodigo_emp()+ "'");
+            connManager.updateDB("delete from CLIENTE where NIF_CLIENTE='" + cli.getNif() + "'");
+            
+            connManager.close();
+    	}
+    	catch (ClassNotFoundException ex) {
+            ex.printStackTrace();
+        }
+    	
+    	catch(DAOExcepcion ex){
+    		ex.printStackTrace();    		
+    	}
+    }
+
+}

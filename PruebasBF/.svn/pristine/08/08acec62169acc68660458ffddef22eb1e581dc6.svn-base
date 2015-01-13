@@ -1,0 +1,73 @@
+import static org.junit.Assert.*;
+import logica.Asesor;
+import logica.Cliente;
+import logica.Controlador;
+import logica.NaveIndustrial;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import persistencia.ConnectionManager;
+import excepciones.DAOExcepcion;
+import excepciones.LogicaExcepcion;
+
+/**
+ * @author Fran Martí
+ * 
+ * Campo de superficie inválido
+ */
+public class CrearNaveIndustrialTest_Bug559 {
+
+	String superficie;
+    NaveIndustrial nv;
+    Controlador controlador;
+    Cliente cli;
+    Asesor ase;
+    
+    @Before
+    public void inicializar() {
+    	superficie = "asd";
+    	controlador = Controlador.dameControlador();
+    	
+    	cli = new Cliente("125", "Juan","ape");
+    	ase = new Asesor("12356", "Asesor 12");
+    	
+    	nv = new NaveIndustrial("111","calle","localidad", "20/02/2014", superficie, "venta", "2", "3", ase, cli);
+    }
+
+	@Test
+	public void testCrearNaveIndustrial() {
+		try{
+			controlador.crearAsesor(ase);
+			controlador.crearCliente(cli);
+			controlador.crearNaveIndustrial(nv);
+	    	fail("El método debería de haber fallado");
+    	}
+    	catch(LogicaExcepcion e){
+    		assertTrue(true);
+    	}
+	}
+	
+	@After
+    public void after(){
+    	try{
+    		ConnectionManager connManager = new ConnectionManager("practicaFinal");
+            connManager.connect();
+            
+            connManager.updateDB("delete from NAVEINDUSTRIAL where COD_ID='" + nv.getCodId() + "'");
+            connManager.updateDB("delete from INMUEBLE where COD_ID='" + nv.getCodId() + "'");
+            connManager.updateDB("delete from ASESOR where CODIGO_EMPLEADO='" + ase.getCodigoEmp()+ "'");
+            connManager.updateDB("delete from CLIENTE where NIF_CLIENTE='" + cli.getNif() + "'");
+            
+            connManager.close();
+    	}
+    	catch (ClassNotFoundException ex) {
+            ex.printStackTrace();
+        }
+    	
+    	catch(DAOExcepcion ex){
+    		ex.printStackTrace();    		
+    	}
+    }
+}

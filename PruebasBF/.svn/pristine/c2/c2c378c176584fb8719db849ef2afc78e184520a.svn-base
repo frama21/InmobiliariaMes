@@ -1,0 +1,39 @@
+import static org.junit.Assert.*;
+import logica.Controlador;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import excepciones.LogicaExcepcion;
+import presentacion.CrearNaveIndustrial;
+
+
+public class CrearNaveIndustrialTest_Bug537 {
+	
+	String cod;
+    int numPu;
+    CrearNaveIndustrial nave;
+    Controlador controlador;
+    
+    @Before
+    public void inicializar() {
+    	cod = "";
+    	controlador = Controlador.dameControlador();
+    	
+    	nave = new CrearNaveIndustrial(controlador);
+    	nave.setCod(cod);
+    	nave.getContentPane().setVisible(false);
+    }
+
+	@Test
+	public void testCrearNaveIndustrial() {
+		try{
+			nave.boton();
+	    	fail("El método debería de haber fallado");
+    	}
+    	catch(LogicaExcepcion e){
+    		assertTrue(true);
+    	}
+	}
+
+}

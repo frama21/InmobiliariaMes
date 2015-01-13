@@ -1,0 +1,141 @@
+package logica;
+
+import java.util.List;
+
+public class Inmueble {
+	private String codID;
+	private String ventaAlquiler;
+	private String calle;
+	private String localidad;
+	private String fechaAlta;
+	private String superficieTotal;
+	private Hipoteca hipoteca;
+	private List<Visita> visitas = null;
+	private ZonaGeografica zonaGeografica;
+	private Asesor asesor;
+	private Cliente cliente;
+
+	public Inmueble(String unCodigo, String unaCalle, String unaLocalidad,
+			String unaFechaAlta, String unaSuperficieTot,
+			String unaVentaAlquiler, Asesor unAsesor, Cliente unCliente) {
+		// TODO Auto-generated constructor stub
+		codID = unCodigo;
+		ventaAlquiler = unaVentaAlquiler;
+		calle = unaCalle;
+		localidad = unaLocalidad;
+		fechaAlta = unaFechaAlta;
+		superficieTotal = unaSuperficieTot;
+		asesor = unAsesor;
+		cliente = unCliente;
+	}
+
+	public void setVentaAlquiler(String va) {
+		ventaAlquiler = va;
+	}
+
+	public String getVentaAlquiler() {
+		return ventaAlquiler;
+	}
+
+	public void setCalle(String c) {
+		calle = c;
+	}
+
+	public String getCalle() {
+		return calle;
+	}
+
+	public void setLocalidad(String l) {
+		localidad = l;
+	}
+
+	public String getLocalidad() {
+		return localidad;
+	}
+
+	public void setFechaAlta(String l) {
+		this.fechaAlta = l;
+	}
+
+	public String getFechaAlta() {
+		return fechaAlta;
+	}
+
+	public void setSuperficieTotal(String st) {
+		superficieTotal = st;
+	}
+
+	public String getSuperficieTotal() {
+		return superficieTotal;
+	}
+
+	public void setHipoteca(Hipoteca h) {
+		hipoteca = h;
+	}
+
+	public Hipoteca getHipoteca() {
+		return hipoteca;
+	}
+
+	// Visitas
+	// Añadir
+	public void añadirVisita(Visita v) {
+		visitas.add(v);
+	}
+
+	// Eliminar
+	public void eliminarVisita(String id) {
+		visitas.remove(obtenerVisitas(id));
+	}
+
+	// Obtener Visita
+	public Visita obtenerVisitas(String id) {
+		Visita vi = null;
+		for (int i = 0; i < visitas.size(); i++) {
+
+			if (visitas.get(i).getInm().getCodId().trim().equals(id))
+				vi = visitas.get(i);
+		}
+		return vi;
+	}
+
+	public void setZonaGeografica(ZonaGeografica zg) {
+		zonaGeografica = zg;
+	}
+
+	public ZonaGeografica getZonaGeografica() {
+		return zonaGeografica;
+	}
+
+	public void setCodId(String c) {
+		codID = c;
+	}
+
+	public String getCodId() {
+		return codID;
+
+	}
+
+	public Asesor getAsesor() {
+		return asesor;
+	}
+
+	public void setAsesor(Asesor a) {
+		asesor = a;
+	}
+
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente c) {
+		this.cliente = c;
+	}
+
+	// Sobreescritura del método toString
+	public String toString() {
+
+		return "Código: " + getCodId();
+	}// Fin de la sobreescritura del método toString.
+
+}// Fin de inmueble.

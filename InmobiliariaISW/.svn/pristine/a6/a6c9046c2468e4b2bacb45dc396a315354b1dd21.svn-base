@@ -1,0 +1,86 @@
+package logica;
+
+import java.util.ArrayList;
+
+public class Asesor {
+	
+	private String codigoEmpleado;
+	private String nombre;
+	private Visita visita;
+	private Inmobiliaria inmobiliaria;
+	private ArrayList<Visita> visitas;
+
+	
+	public Asesor (String unCodigoEmpleado, String unNombre) {
+		codigoEmpleado= unCodigoEmpleado;
+		nombre = unNombre;
+	}
+
+
+	public void setCodigoEmp(String ce) {
+		codigoEmpleado = ce;
+	}
+
+	
+	public String getCodigoEmp() {
+		return codigoEmpleado;
+	}
+
+	
+	public void setVisita(Visita v) {
+		visita = v;
+	}
+
+	
+	public Visita getVisita() {
+		return visita;
+	}
+
+	
+	public void setInmobiliaria(Inmobiliaria i) {
+		inmobiliaria = i;
+	}
+
+	
+	public Inmobiliaria getInmobiliaria() {
+		return inmobiliaria;
+	}
+	
+	
+	//Visitas
+	//Añadir 
+	public void añadirVisita(Visita v){
+		visitas.add(v);
+	}
+	
+	
+	//Eliminar
+	public void eliminarVisita(String fecha){	
+		visitas.remove(obetenerVisita(fecha));
+	}
+
+	
+	//Obtener Visitas
+	public int obetenerVisita(String fecha){
+		int res = 0;
+		for(int i = 0 ; i < visitas.size() ; i++){		
+			if(visitas.get(i).getFecha().equals(fecha)) res = i;
+		}
+		return res;
+	}
+
+
+	public String getNombre() {
+		return nombre;
+	}
+
+
+	public void setNombre(String n) {
+		nombre = n;
+	}
+
+	
+	public String toString() {
+		return getNombre();
+	}
+}

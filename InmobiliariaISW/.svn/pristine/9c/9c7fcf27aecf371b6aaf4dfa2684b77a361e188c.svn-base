@@ -1,0 +1,57 @@
+package logica;
+
+public class Transaccion {
+	
+	private String cod;
+	private String precio_final;
+	private String fecha;
+	private String compra_alquiler;
+	private Oferta oferta;
+	
+	public Transaccion (String cod, String precio_final, String fecha, String compra_alquiler,Oferta oferta) {
+		this.cod = cod;
+		this.precio_final = precio_final;
+		this.fecha= fecha;
+		this.compra_alquiler= compra_alquiler;
+		this.oferta = oferta;
+	}
+	
+	public void setPrecio_final(String precio_final) {
+		this.precio_final = precio_final;
+	}
+	public String getPrecio_final() {
+		return precio_final;
+	}
+	public void setFecha(String fecha) {
+		this.fecha = fecha;
+	}
+	public String getFecha() {
+		return fecha;
+	}
+	public void setCompra_alquiler(String compra_alquiler) {
+		this.compra_alquiler = compra_alquiler;
+	}
+	public String getCompra_alquiler() {
+		return compra_alquiler;
+	}
+	public Oferta getOferta() {
+		return oferta;
+	}
+	public void setOferta(Oferta oferta) {
+		this.oferta = oferta;
+	}
+
+	public String getCod() {
+		return cod;
+	}
+
+	public void setCod(String cod) {
+		this.cod = cod;
+	}
+	
+	//Método toString sobreescrito.
+		public String toString() {
+			return "Transacción de código: "+getCod();
+		}
+	
+}//Fin de Transacción.

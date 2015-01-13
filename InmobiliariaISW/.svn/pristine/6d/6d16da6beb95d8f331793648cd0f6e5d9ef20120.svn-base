@@ -1,0 +1,82 @@
+package logica;
+
+import java.util.ArrayList;
+
+public class CasaPueblo extends Inmueble {
+
+	private String superficiePatio;
+	private String numeroPlantas;
+	private String superficiePlantas;
+	private PlazaGaraje plazaGaraje;
+	ArrayList<PlazaGaraje> plazasGaraje;
+
+	public CasaPueblo(String unCodigo, String unaCalle, String unaLocalidad, String unaFechaAlta,
+			String unaSuperficieTot, String unaVentaAlquiler, String unaSuperficiePatio, String unNumeroPlantas,
+			String unaSuperficiePlantas, Asesor unAsesor, Cliente unCliente) {
+		super(unCodigo, unaCalle, unaLocalidad, unaFechaAlta, unaSuperficieTot, unaVentaAlquiler, unAsesor, unCliente);
+
+		superficiePatio = unaSuperficiePatio;
+		numeroPlantas = unNumeroPlantas;
+		superficiePlantas = unaSuperficiePlantas;
+	}
+
+	public String getSuperficiePatio(){
+		return superficiePatio;
+	}
+	
+	
+	public String getSuperficiePlantas(){
+		return superficiePlantas;
+	}
+	
+	
+	public String getNumeroPlantas(){
+		return numeroPlantas;
+	}
+	
+	
+	public void setSuperficiePatio(String sp){
+		superficiePatio = sp;
+	}
+	
+	
+	public void setSuperficiePlantas(String sp){
+		superficiePlantas = sp;
+	}
+	
+	
+	public void setNumeroPlantas(String np){
+		numeroPlantas = np;
+	}
+	
+	
+	public void setPlazaGaraje(PlazaGaraje pg) {
+		plazaGaraje = pg;
+	}
+	
+	
+	public PlazaGaraje getPlazaGaraje() {
+		return plazaGaraje;
+	}
+	//Plaza Garaje
+
+	//Añadir 
+	public void añadirPlazaGaraje(PlazaGaraje pg){
+		plazasGaraje.add(pg);
+	}
+	
+	
+	//Eliminar
+	public void eliminarVisita(String caracter){
+		plazasGaraje.remove(obetenerPlazaGaraje(caracter));
+	}
+
+	//Obtener 
+	public int obetenerPlazaGaraje(String caracter){
+		int res = 0;
+		for(int i = 0 ; i < plazasGaraje.size() ; i++){		
+			if(plazasGaraje.get(i).getCaracter().equals(caracter)) res = i;
+		}
+		return res;
+	}
+}//Fin de la clase.

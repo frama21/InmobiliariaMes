@@ -1,0 +1,946 @@
+<html><head><title>PMD</title></head><body>
+<center><h3>PMD report</h3></center><center><h3>Problems found</h3></center><table align="center" cellspacing="0" cellpadding="3"><tr>
+<th>#</th><th>File</th><th>Line</th><th>Problem</th></tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">325</td>
+<td width="*%">src/logica/Adosado.java</td>
+<td align="center" width="5%">5</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'gastos_comunidad' is not final.</a></td>
+</tr>
+<tr> 
+<td align="center">326</td>
+<td width="*%">src/logica/Adosado.java</td>
+<td align="center" width="5%">9</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'superficie_patio' is not final.</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">327</td>
+<td width="*%">src/logica/Adosado.java</td>
+<td align="center" width="5%">10</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'gastos_comunidad' is not final.</a></td>
+</tr>
+<tr> 
+<td align="center">328</td>
+<td width="*%">src/logica/Adosado.java</td>
+<td align="center" width="5%">10</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'numero_plantas' is not final.</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">329</td>
+<td width="*%">src/logica/Adosado.java</td>
+<td align="center" width="5%">10</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'superficie_plantas' is not final.</a></td>
+</tr>
+<tr> 
+<td align="center">330</td>
+<td width="*%">src/logica/Adosado.java</td>
+<td align="center" width="5%">23</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#MethodNamingConventions">Method names should not contain underscores</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">331</td>
+<td width="*%">src/logica/Adosado.java</td>
+<td align="center" width="5%">23</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'gastos_comunidad' is not final.</a></td>
+</tr>
+<tr> 
+<td align="center">332</td>
+<td width="*%">src/logica/Adosado.java</td>
+<td align="center" width="5%">31</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#MethodNamingConventions">Method names should not contain underscores</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">333</td>
+<td width="*%">src/logica/Asesor.java</td>
+<td align="center" width="5%">7</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'codigo_emp' is not final.</a></td>
+</tr>
+<tr> 
+<td align="center">334</td>
+<td width="*%">src/logica/Asesor.java</td>
+<td align="center" width="5%">13</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'codigo_emp' is not final.</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">335</td>
+<td width="*%">src/logica/Asesor.java</td>
+<td align="center" width="5%">19</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#MethodNamingConventions">Method names should not contain underscores</a></td>
+</tr>
+<tr> 
+<td align="center">336</td>
+<td width="*%">src/logica/Asesor.java</td>
+<td align="center" width="5%">19</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'codigo_emp' is not final.</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">337</td>
+<td width="*%">src/logica/Asesor.java</td>
+<td align="center" width="5%">23</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#MethodNamingConventions">Method names should not contain underscores</a></td>
+</tr>
+<tr> 
+<td align="center">338</td>
+<td width="*%">src/logica/BajoComercial.java</td>
+<td align="center" width="5%">5</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'num_puertas' is not final.</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">339</td>
+<td width="*%">src/logica/BajoComercial.java</td>
+<td align="center" width="5%">8</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'num_puertas' is not final.</a></td>
+</tr>
+<tr> 
+<td align="center">340</td>
+<td width="*%">src/logica/BajoComercial.java</td>
+<td align="center" width="5%">16</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#MethodNamingConventions">Method names should not contain underscores</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">341</td>
+<td width="*%">src/logica/BajoComercial.java</td>
+<td align="center" width="5%">16</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'num_puertas' is not final.</a></td>
+</tr>
+<tr> 
+<td align="center">342</td>
+<td width="*%">src/logica/BajoComercial.java</td>
+<td align="center" width="5%">20</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#MethodNamingConventions">Method names should not contain underscores</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">343</td>
+<td width="*%">src/logica/CasaPueblo.java</td>
+<td align="center" width="5%">8</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'numero_plantas' is not final.</a></td>
+</tr>
+<tr> 
+<td align="center">344</td>
+<td width="*%">src/logica/CasaPueblo.java</td>
+<td align="center" width="5%">9</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'superficie_plantas' is not final.</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">345</td>
+<td width="*%">src/logica/Controlador.java</td>
+<td align="center" width="5%">10</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/design.html#ClassWithOnlyPrivateConstructorsShouldBeFinal">A class which only has private constructors should be final</a></td>
+</tr>
+<tr> 
+<td align="center">346</td>
+<td width="*%">src/logica/Controlador.java</td>
+<td align="center" width="5%">29</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'ref_controlador' is not final.</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">347</td>
+<td width="*%">src/logica/Controlador.java</td>
+<td align="center" width="5%">318</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'cod_Id' is not final.</a></td>
+</tr>
+<tr> 
+<td align="center">348</td>
+<td width="*%">src/logica/Hipoteca.java</td>
+<td align="center" width="5%">4</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'cantidad_pendiente' is not final.</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">349</td>
+<td width="*%">src/logica/Hipoteca.java</td>
+<td align="center" width="5%">7</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'cantidad_pendiente' is not final.</a></td>
+</tr>
+<tr> 
+<td align="center">350</td>
+<td width="*%">src/logica/Hipoteca.java</td>
+<td align="center" width="5%">13</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#MethodNamingConventions">Method names should not contain underscores</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">351</td>
+<td width="*%">src/logica/Hipoteca.java</td>
+<td align="center" width="5%">13</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'cantidad_pendiente' is not final.</a></td>
+</tr>
+<tr> 
+<td align="center">352</td>
+<td width="*%">src/logica/Hipoteca.java</td>
+<td align="center" width="5%">16</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#MethodNamingConventions">Method names should not contain underscores</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">353</td>
+<td width="*%">src/logica/Inmobiliaria.java</td>
+<td align="center" width="5%">29</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'cod_emp' is not final.</a></td>
+</tr>
+<tr> 
+<td align="center">354</td>
+<td width="*%">src/logica/Inmobiliaria.java</td>
+<td align="center" width="5%">34</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'cod_emp' is not final.</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">355</td>
+<td width="*%">src/logica/Inmobiliaria.java</td>
+<td align="center" width="5%">68</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'cod_id' is not final.</a></td>
+</tr>
+<tr> 
+<td align="center">356</td>
+<td width="*%">src/logica/Inmobiliaria.java</td>
+<td align="center" width="5%">73</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'cod_id' is not final.</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">357</td>
+<td width="*%">src/logica/Inmueble.java</td>
+<td align="center" width="5%">9</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'COD_ID' is not final.</a></td>
+</tr>
+<tr> 
+<td align="center">358</td>
+<td width="*%">src/logica/Inmueble.java</td>
+<td align="center" width="5%">9</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Variables should start with a lowercase character, 'COD_ID' starts with uppercase character.</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">359</td>
+<td width="*%">src/logica/Inmueble.java</td>
+<td align="center" width="5%">10</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'venta_alquiler' is not final.</a></td>
+</tr>
+<tr> 
+<td align="center">360</td>
+<td width="*%">src/logica/Inmueble.java</td>
+<td align="center" width="5%">13</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'fecha_alta' is not final.</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">361</td>
+<td width="*%">src/logica/Inmueble.java</td>
+<td align="center" width="5%">14</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'superficie_total' is not final.</a></td>
+</tr>
+<tr> 
+<td align="center">362</td>
+<td width="*%">src/logica/Inmueble.java</td>
+<td align="center" width="5%">30</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#MethodNamingConventions">Method names should not contain underscores</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">363</td>
+<td width="*%">src/logica/Inmueble.java</td>
+<td align="center" width="5%">30</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'venta_alquiler' is not final.</a></td>
+</tr>
+<tr> 
+<td align="center">364</td>
+<td width="*%">src/logica/Inmueble.java</td>
+<td align="center" width="5%">33</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#MethodNamingConventions">Method names should not contain underscores</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">365</td>
+<td width="*%">src/logica/Inmueble.java</td>
+<td align="center" width="5%">48</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#MethodNamingConventions">Method names should not contain underscores</a></td>
+</tr>
+<tr> 
+<td align="center">366</td>
+<td width="*%">src/logica/Inmueble.java</td>
+<td align="center" width="5%">48</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'fecha_alta' is not final.</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">367</td>
+<td width="*%">src/logica/Inmueble.java</td>
+<td align="center" width="5%">51</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#MethodNamingConventions">Method names should not contain underscores</a></td>
+</tr>
+<tr> 
+<td align="center">368</td>
+<td width="*%">src/logica/Inmueble.java</td>
+<td align="center" width="5%">54</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#MethodNamingConventions">Method names should not contain underscores</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">369</td>
+<td width="*%">src/logica/Inmueble.java</td>
+<td align="center" width="5%">54</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'superficie_total' is not final.</a></td>
+</tr>
+<tr> 
+<td align="center">370</td>
+<td width="*%">src/logica/Inmueble.java</td>
+<td align="center" width="5%">57</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#MethodNamingConventions">Method names should not contain underscores</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">371</td>
+<td width="*%">src/logica/Inmueble.java</td>
+<td align="center" width="5%">97</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#MethodNamingConventions">Method names should not contain underscores</a></td>
+</tr>
+<tr> 
+<td align="center">372</td>
+<td width="*%">src/logica/Inmueble.java</td>
+<td align="center" width="5%">97</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'cod_ID' is not final.</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">373</td>
+<td width="*%">src/logica/Inmueble.java</td>
+<td align="center" width="5%">101</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#MethodNamingConventions">Method names should not contain underscores</a></td>
+</tr>
+<tr> 
+<td align="center">374</td>
+<td width="*%">src/logica/Interesado.java</td>
+<td align="center" width="5%">5</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'preciomaximo_compra' is not final.</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">375</td>
+<td width="*%">src/logica/Interesado.java</td>
+<td align="center" width="5%">6</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'preciomaximo_alquiler' is not final.</a></td>
+</tr>
+<tr> 
+<td align="center">376</td>
+<td width="*%">src/logica/Interesado.java</td>
+<td align="center" width="5%">10</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'preciomaximo_alquiler' is not final.</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">377</td>
+<td width="*%">src/logica/Interesado.java</td>
+<td align="center" width="5%">10</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'preciomaximo_compra' is not final.</a></td>
+</tr>
+<tr> 
+<td align="center">378</td>
+<td width="*%">src/logica/Interesado.java</td>
+<td align="center" width="5%">15</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#MethodNamingConventions">Method names should not contain underscores</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">379</td>
+<td width="*%">src/logica/Interesado.java</td>
+<td align="center" width="5%">15</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'preciomaximo_compra' is not final.</a></td>
+</tr>
+<tr> 
+<td align="center">380</td>
+<td width="*%">src/logica/Interesado.java</td>
+<td align="center" width="5%">18</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#MethodNamingConventions">Method names should not contain underscores</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">381</td>
+<td width="*%">src/logica/Interesado.java</td>
+<td align="center" width="5%">21</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#MethodNamingConventions">Method names should not contain underscores</a></td>
+</tr>
+<tr> 
+<td align="center">382</td>
+<td width="*%">src/logica/Interesado.java</td>
+<td align="center" width="5%">21</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'preciomaximo_alquiler' is not final.</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">383</td>
+<td width="*%">src/logica/Interesado.java</td>
+<td align="center" width="5%">24</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#MethodNamingConventions">Method names should not contain underscores</a></td>
+</tr>
+<tr> 
+<td align="center">384</td>
+<td width="*%">src/logica/NaveIndustrial.java</td>
+<td align="center" width="5%">5</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'num_puertas' is not final.</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">385</td>
+<td width="*%">src/logica/NaveIndustrial.java</td>
+<td align="center" width="5%">9</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'num_puertas' is not final.</a></td>
+</tr>
+<tr> 
+<td align="center">386</td>
+<td width="*%">src/logica/NaveIndustrial.java</td>
+<td align="center" width="5%">18</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#MethodNamingConventions">Method names should not contain underscores</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">387</td>
+<td width="*%">src/logica/NaveIndustrial.java</td>
+<td align="center" width="5%">18</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'num_puertas' is not final.</a></td>
+</tr>
+<tr> 
+<td align="center">388</td>
+<td width="*%">src/logica/NaveIndustrial.java</td>
+<td align="center" width="5%">21</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#MethodNamingConventions">Method names should not contain underscores</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">389</td>
+<td width="*%">src/logica/Piso.java</td>
+<td align="center" width="5%">4</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#ShortClassName">Avoid short class names like Piso</a></td>
+</tr>
+<tr> 
+<td align="center">390</td>
+<td width="*%">src/logica/Piso.java</td>
+<td align="center" width="5%">6</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'num_habitaciones' is not final.</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">391</td>
+<td width="*%">src/logica/Piso.java</td>
+<td align="center" width="5%">12</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'num_habita' is not final.</a></td>
+</tr>
+<tr> 
+<td align="center">392</td>
+<td width="*%">src/logica/Piso.java</td>
+<td align="center" width="5%">22</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#MethodNamingConventions">Method names should not contain underscores</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">393</td>
+<td width="*%">src/logica/Piso.java</td>
+<td align="center" width="5%">22</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'num_habitaciones' is not final.</a></td>
+</tr>
+<tr> 
+<td align="center">394</td>
+<td width="*%">src/logica/Piso.java</td>
+<td align="center" width="5%">26</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#MethodNamingConventions">Method names should not contain underscores</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">395</td>
+<td width="*%">src/logica/Transaccion.java</td>
+<td align="center" width="5%">6</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'precio_final' is not final.</a></td>
+</tr>
+<tr> 
+<td align="center">396</td>
+<td width="*%">src/logica/Transaccion.java</td>
+<td align="center" width="5%">8</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'compra_alquiler' is not final.</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">397</td>
+<td width="*%">src/logica/Transaccion.java</td>
+<td align="center" width="5%">11</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'compra_alquiler' is not final.</a></td>
+</tr>
+<tr> 
+<td align="center">398</td>
+<td width="*%">src/logica/Transaccion.java</td>
+<td align="center" width="5%">11</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'precio_final' is not final.</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">399</td>
+<td width="*%">src/logica/Transaccion.java</td>
+<td align="center" width="5%">19</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#MethodNamingConventions">Method names should not contain underscores</a></td>
+</tr>
+<tr> 
+<td align="center">400</td>
+<td width="*%">src/logica/Transaccion.java</td>
+<td align="center" width="5%">19</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'precio_final' is not final.</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">401</td>
+<td width="*%">src/logica/Transaccion.java</td>
+<td align="center" width="5%">22</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#MethodNamingConventions">Method names should not contain underscores</a></td>
+</tr>
+<tr> 
+<td align="center">402</td>
+<td width="*%">src/logica/Transaccion.java</td>
+<td align="center" width="5%">31</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#MethodNamingConventions">Method names should not contain underscores</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">403</td>
+<td width="*%">src/logica/Transaccion.java</td>
+<td align="center" width="5%">31</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'compra_alquiler' is not final.</a></td>
+</tr>
+<tr> 
+<td align="center">404</td>
+<td width="*%">src/logica/Transaccion.java</td>
+<td align="center" width="5%">34</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#MethodNamingConventions">Method names should not contain underscores</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">405</td>
+<td width="*%">src/logica/ZonaGeografica.java</td>
+<td align="center" width="5%">47</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'cod_id' is not final.</a></td>
+</tr>
+<tr> 
+<td align="center">406</td>
+<td width="*%">src/logica/ZonaGeografica.java</td>
+<td align="center" width="5%">52</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'cod_id' is not final.</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">407</td>
+<td width="*%">src/persistencia/AsesorDAOImp.java</td>
+<td align="center" width="5%">22</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/controversial.html#AvoidPrefixingMethodParameters">Avoid prefixing parameters by in, out or inOut. Uses Javadoc to document this behavior.</a></td>
+</tr>
+<tr> 
+<td align="center">408</td>
+<td width="*%">src/persistencia/DAL.java</td>
+<td align="center" width="5%">17</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/design.html#ClassWithOnlyPrivateConstructorsShouldBeFinal">A class which only has private constructors should be final</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">409</td>
+<td width="*%">src/persistencia/DAL.java</td>
+<td align="center" width="5%">17</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#ShortClassName">Avoid short class names like DAL</a></td>
+</tr>
+<tr> 
+<td align="center">410</td>
+<td width="*%">src/persistencia/DAL.java</td>
+<td align="center" width="5%">88</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'cod_Id' is not final.</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">411</td>
+<td width="*%">src/persistencia/DAL.java</td>
+<td align="center" width="5%">93</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'cod_Id' is not final.</a></td>
+</tr>
+<tr> 
+<td align="center">412</td>
+<td width="*%">src/persistencia/DAL.java</td>
+<td align="center" width="5%">99</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'cod_Id' is not final.</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">413</td>
+<td width="*%">src/persistencia/DAL.java</td>
+<td align="center" width="5%">105</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'cod_Id' is not final.</a></td>
+</tr>
+<tr> 
+<td align="center">414</td>
+<td width="*%">src/persistencia/InmuebleDAOImp.java</td>
+<td align="center" width="5%">26</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/controversial.html#AvoidPrefixingMethodParameters">Avoid prefixing parameters by in, out or inOut. Uses Javadoc to document this behavior.</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">415</td>
+<td width="*%">src/presentacion/ConsultaPisosJDialog.java</td>
+<td align="center" width="5%">40</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/design.html#UseVarargs">Consider using varargs for methods or constructors which take an array the last parameter.</a></td>
+</tr>
+<tr> 
+<td align="center">416</td>
+<td width="*%">src/presentacion/ConsultaPisosJDialog.java</td>
+<td align="center" width="5%">55</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/logging-java.html#SystemPrintln">System.out.println is used</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">417</td>
+<td width="*%">src/presentacion/ConsultarAsesores.java</td>
+<td align="center" width="5%">40</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/design.html#UseVarargs">Consider using varargs for methods or constructors which take an array the last parameter.</a></td>
+</tr>
+<tr> 
+<td align="center">418</td>
+<td width="*%">src/presentacion/ConsultarAsesores.java</td>
+<td align="center" width="5%">55</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/logging-java.html#SystemPrintln">System.out.println is used</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">419</td>
+<td width="*%">src/presentacion/ConsultarClientes.java</td>
+<td align="center" width="5%">40</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/design.html#UseVarargs">Consider using varargs for methods or constructors which take an array the last parameter.</a></td>
+</tr>
+<tr> 
+<td align="center">420</td>
+<td width="*%">src/presentacion/ConsultarClientes.java</td>
+<td align="center" width="5%">55</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/logging-java.html#SystemPrintln">System.out.println is used</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">421</td>
+<td width="*%">src/presentacion/ConsultarInmueblesNo.java</td>
+<td align="center" width="5%">49</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/design.html#UseVarargs">Consider using varargs for methods or constructors which take an array the last parameter.</a></td>
+</tr>
+<tr> 
+<td align="center">422</td>
+<td width="*%">src/presentacion/ConsultarInmueblesNo.java</td>
+<td align="center" width="5%">64</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/logging-java.html#SystemPrintln">System.out.println is used</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">423</td>
+<td width="*%">src/presentacion/ConsultarInmueblesNo.java</td>
+<td align="center" width="5%">120</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'lblListadoDeLos_1' is not final.</a></td>
+</tr>
+<tr> 
+<td align="center">424</td>
+<td width="*%">src/presentacion/ConsultarNaveIndustrial.java</td>
+<td align="center" width="5%">39</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/design.html#UseVarargs">Consider using varargs for methods or constructors which take an array the last parameter.</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">425</td>
+<td width="*%">src/presentacion/ConsultarNaveIndustrial.java</td>
+<td align="center" width="5%">54</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/logging-java.html#SystemPrintln">System.out.println is used</a></td>
+</tr>
+<tr> 
+<td align="center">426</td>
+<td width="*%">src/presentacion/ConsultarTodosAsesores.java</td>
+<td align="center" width="5%">36</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/design.html#UseVarargs">Consider using varargs for methods or constructors which take an array the last parameter.</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">427</td>
+<td width="*%">src/presentacion/ConsultarTodosAsesores.java</td>
+<td align="center" width="5%">51</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/logging-java.html#SystemPrintln">System.out.println is used</a></td>
+</tr>
+<tr> 
+<td align="center">428</td>
+<td width="*%">src/presentacion/ConsultarTodosClientes.java</td>
+<td align="center" width="5%">40</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/design.html#UseVarargs">Consider using varargs for methods or constructors which take an array the last parameter.</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">429</td>
+<td width="*%">src/presentacion/ConsultarTodosClientes.java</td>
+<td align="center" width="5%">55</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/logging-java.html#SystemPrintln">System.out.println is used</a></td>
+</tr>
+<tr> 
+<td align="center">430</td>
+<td width="*%">src/presentacion/ConsultarVisitaOferta.java</td>
+<td align="center" width="5%">46</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/design.html#UseVarargs">Consider using varargs for methods or constructors which take an array the last parameter.</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">431</td>
+<td width="*%">src/presentacion/ConsultarVisitaOferta.java</td>
+<td align="center" width="5%">61</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/logging-java.html#SystemPrintln">System.out.println is used</a></td>
+</tr>
+<tr> 
+<td align="center">432</td>
+<td width="*%">src/presentacion/ConsultarVisitaOferta.java</td>
+<td align="center" width="5%">117</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'lblListadoDeLos_1' is not final.</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">433</td>
+<td width="*%">src/presentacion/CreadoPor.java</td>
+<td align="center" width="5%">25</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/design.html#UseVarargs">Consider using varargs for methods or constructors which take an array the last parameter.</a></td>
+</tr>
+<tr> 
+<td align="center">434</td>
+<td width="*%">src/presentacion/CrearAsesor.java</td>
+<td align="center" width="5%">30</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'textCod_Emp' is not final.</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">435</td>
+<td width="*%">src/presentacion/CrearAsesor.java</td>
+<td align="center" width="5%">37</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/design.html#UseVarargs">Consider using varargs for methods or constructors which take an array the last parameter.</a></td>
+</tr>
+<tr> 
+<td align="center">436</td>
+<td width="*%">src/presentacion/CrearAsesor.java</td>
+<td align="center" width="5%">64</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/logging-java.html#SystemPrintln">System.out.println is used</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">437</td>
+<td width="*%">src/presentacion/CrearAsesor.java</td>
+<td align="center" width="5%">90</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'lblNewLabel_1' is not final.</a></td>
+</tr>
+<tr> 
+<td align="center">438</td>
+<td width="*%">src/presentacion/CrearAsesor.java</td>
+<td align="center" width="5%">112</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Variables should start with a lowercase character, 'ActionListener' starts with uppercase character.</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">439</td>
+<td width="*%">src/presentacion/CrearCliente.java</td>
+<td align="center" width="5%">37</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/design.html#UseVarargs">Consider using varargs for methods or constructors which take an array the last parameter.</a></td>
+</tr>
+<tr> 
+<td align="center">440</td>
+<td width="*%">src/presentacion/CrearCliente.java</td>
+<td align="center" width="5%">72</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/logging-java.html#SystemPrintln">System.out.println is used</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">441</td>
+<td width="*%">src/presentacion/CrearCliente.java</td>
+<td align="center" width="5%">101</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'lblNewLabel_1' is not final.</a></td>
+</tr>
+<tr> 
+<td align="center">442</td>
+<td width="*%">src/presentacion/CrearCliente.java</td>
+<td align="center" width="5%">106</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'lblNewLabel_2' is not final.</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">443</td>
+<td width="*%">src/presentacion/CrearNaveIndustrial.java</td>
+<td align="center" width="5%">52</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/design.html#UseVarargs">Consider using varargs for methods or constructors which take an array the last parameter.</a></td>
+</tr>
+<tr> 
+<td align="center">444</td>
+<td width="*%">src/presentacion/CrearNaveIndustrial.java</td>
+<td align="center" width="5%">91</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/logging-java.html#SystemPrintln">System.out.println is used</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">445</td>
+<td width="*%">src/presentacion/CrearNaveIndustrial.java</td>
+<td align="center" width="5%">118</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'lblNewLabel_1' is not final.</a></td>
+</tr>
+<tr> 
+<td align="center">446</td>
+<td width="*%">src/presentacion/CrearNaveIndustrial.java</td>
+<td align="center" width="5%">127</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'lblNewLabel_2' is not final.</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">447</td>
+<td width="*%">src/presentacion/CrearNaveIndustrial.java</td>
+<td align="center" width="5%">136</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'lblNewLabel_3' is not final.</a></td>
+</tr>
+<tr> 
+<td align="center">448</td>
+<td width="*%">src/presentacion/CrearNaveIndustrial.java</td>
+<td align="center" width="5%">145</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'lblNewLabel_4' is not final.</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">449</td>
+<td width="*%">src/presentacion/CrearNaveIndustrial.java</td>
+<td align="center" width="5%">223</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'lblNewLabel_5' is not final.</a></td>
+</tr>
+<tr> 
+<td align="center">450</td>
+<td width="*%">src/presentacion/CrearNaveIndustrial.java</td>
+<td align="center" width="5%">239</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Variables should start with a lowercase character, 'ActionListener' starts with uppercase character.</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">451</td>
+<td width="*%">src/presentacion/CrearPisoJDialog.java</td>
+<td align="center" width="5%">52</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/design.html#UseVarargs">Consider using varargs for methods or constructors which take an array the last parameter.</a></td>
+</tr>
+<tr> 
+<td align="center">452</td>
+<td width="*%">src/presentacion/CrearPisoJDialog.java</td>
+<td align="center" width="5%">67</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/logging-java.html#SystemPrintln">System.out.println is used</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">453</td>
+<td width="*%">src/presentacion/CrearPisoJDialog.java</td>
+<td align="center" width="5%">94</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'lblNewLabel_1' is not final.</a></td>
+</tr>
+<tr> 
+<td align="center">454</td>
+<td width="*%">src/presentacion/CrearPisoJDialog.java</td>
+<td align="center" width="5%">103</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'lblNewLabel_2' is not final.</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">455</td>
+<td width="*%">src/presentacion/CrearPisoJDialog.java</td>
+<td align="center" width="5%">112</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'lblNewLabel_3' is not final.</a></td>
+</tr>
+<tr> 
+<td align="center">456</td>
+<td width="*%">src/presentacion/CrearPisoJDialog.java</td>
+<td align="center" width="5%">121</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'lblNewLabel_4' is not final.</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">457</td>
+<td width="*%">src/presentacion/CrearPisoJDialog.java</td>
+<td align="center" width="5%">208</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Variables should start with a lowercase character, 'ActionListener' starts with uppercase character.</a></td>
+</tr>
+<tr> 
+<td align="center">458</td>
+<td width="*%">src/presentacion/InmobiliariaApp.java</td>
+<td align="center" width="5%">26</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/design.html#UseVarargs">Consider using varargs for methods or constructors which take an array the last parameter.</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">459</td>
+<td width="*%">src/presentacion/InmobiliariaApp.java</td>
+<td align="center" width="5%">54</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/logging-java.html#SystemPrintln">System.out.println is used</a></td>
+</tr>
+<tr> 
+<td align="center">460</td>
+<td width="*%">src/presentacion/InmobiliariaApp.java</td>
+<td align="center" width="5%">190</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'separator_3' is not final.</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">461</td>
+<td width="*%">src/presentacion/InmobiliariaApp.java</td>
+<td align="center" width="5%">219</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'mntmNewMenuItem_1' is not final.</a></td>
+</tr>
+<tr> 
+<td align="center">462</td>
+<td width="*%">src/presentacion/InmobiliariaApp.java</td>
+<td align="center" width="5%">231</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'separator_2' is not final.</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">463</td>
+<td width="*%">src/presentacion/InmobiliariaApp.java</td>
+<td align="center" width="5%">249</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'mntmNewMenuItem_2' is not final.</a></td>
+</tr>
+<tr> 
+<td align="center">464</td>
+<td width="*%">src/presentacion/InmobiliariaApp.java</td>
+<td align="center" width="5%">252</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'separator_4' is not final.</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">465</td>
+<td width="*%">src/presentacion/InmobiliariaApp.java</td>
+<td align="center" width="5%">255</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'menuItem_1' is not final.</a></td>
+</tr>
+<tr> 
+<td align="center">466</td>
+<td width="*%">src/presentacion/InmobiliariaApp.java</td>
+<td align="center" width="5%">301</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'separator_5' is not final.</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">467</td>
+<td width="*%">src/presentacion/InmobiliariaApp.java</td>
+<td align="center" width="5%">304</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'menuItem_2' is not final.</a></td>
+</tr>
+<tr> 
+<td align="center">468</td>
+<td width="*%">src/presentacion/InmobiliariaApp.java</td>
+<td align="center" width="5%">328</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'separator_6' is not final.</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">469</td>
+<td width="*%">src/presentacion/InmobiliariaApp.java</td>
+<td align="center" width="5%">331</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'menuItem_3' is not final.</a></td>
+</tr>
+<tr> 
+<td align="center">470</td>
+<td width="*%">src/presentacion/NuevaOferta.java</td>
+<td align="center" width="5%">38</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/design.html#UseVarargs">Consider using varargs for methods or constructors which take an array the last parameter.</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">471</td>
+<td width="*%">src/presentacion/NuevaOferta.java</td>
+<td align="center" width="5%">53</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/logging-java.html#SystemPrintln">System.out.println is used</a></td>
+</tr>
+<tr> 
+<td align="center">472</td>
+<td width="*%">src/presentacion/NuevaOferta.java</td>
+<td align="center" width="5%">145</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'lblNewLabel_1' is not final.</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">473</td>
+<td width="*%">src/presentacion/NuevaOferta.java</td>
+<td align="center" width="5%">149</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'lblNewLabel_2' is not final.</a></td>
+</tr>
+<tr> 
+<td align="center">474</td>
+<td width="*%">src/presentacion/NuevaTransaccion.java</td>
+<td align="center" width="5%">46</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/design.html#UseVarargs">Consider using varargs for methods or constructors which take an array the last parameter.</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">475</td>
+<td width="*%">src/presentacion/NuevaTransaccion.java</td>
+<td align="center" width="5%">72</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/logging-java.html#SystemPrintln">System.out.println is used</a></td>
+</tr>
+<tr> 
+<td align="center">476</td>
+<td width="*%">src/presentacion/NuevaTransaccion.java</td>
+<td align="center" width="5%">161</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'label_1' is not final.</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">477</td>
+<td width="*%">src/presentacion/NuevaTransaccion.java</td>
+<td align="center" width="5%">175</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'label_2' is not final.</a></td>
+</tr>
+<tr> 
+<td align="center">478</td>
+<td width="*%">src/presentacion/NuevaTransaccion.java</td>
+<td align="center" width="5%">183</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'label_3' is not final.</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">479</td>
+<td width="*%">src/presentacion/NuevaVisita.java</td>
+<td align="center" width="5%">41</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/design.html#UseVarargs">Consider using varargs for methods or constructors which take an array the last parameter.</a></td>
+</tr>
+<tr> 
+<td align="center">480</td>
+<td width="*%">src/presentacion/NuevaVisita.java</td>
+<td align="center" width="5%">69</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/logging-java.html#SystemPrintln">System.out.println is used</a></td>
+</tr>
+<tr bgcolor="lightgrey"> 
+<td align="center">481</td>
+<td width="*%">src/presentacion/NuevaVisita.java</td>
+<td align="center" width="5%">152</td>
+<td width="*"><a href="http://pmd.sourceforge.net/pmd-5.2.1/pmd-java/rules/java/naming.html#VariableNamingConventions">Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'separator_1' is not final.</a></td>
+</tr>
+</table></body></html>

@@ -1,0 +1,86 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+import excepciones.DAOExcepcion;
+import excepciones.LogicaExcepcion;
+import logica.Asesor;
+import logica.Cliente;
+import logica.Controlador;
+import logica.Inmueble;
+import logica.Visita;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import static org.junit.Assert.*;
+import persistencia.ConnectionManager;
+import presentacion.NuevaVisita;
+
+/**
+ *
+ * @author joseph
+ */
+public class NuevaVisitaTest_Bug517 {
+    
+    Controlador controlador;
+    Inmueble inmueble;
+    Asesor asesor;
+    Cliente cliente;
+    Visita v1, v2;
+    NuevaVisita nuevaVisita;
+    ConnectionManager conexion;
+    
+    public NuevaVisitaTest_Bug517() {
+    }
+
+    @Before
+    public void inicializar() {
+        controlador = Controlador.dameControlador();
+            cliente = new Cliente("12345678A", "Antonio", "Manostijeras");
+            asesor = new Asesor("0001", "Paquito");
+            inmueble = new Inmueble("1111", "Calle falsa", "localidad falsa", "1/1/1980", "80m2", "venta", asesor, cliente);            
+            // Visita sin fecha
+            v1 = new Visita("prueba517", "", inmueble, asesor, cliente);
+            // Visita sin codigo
+            v2 = new Visita("", "01/01/2015", inmueble, asesor, cliente);
+    }
+
+    @Test
+    public void test() {
+        try {
+            controlador.crearVisita(v1);
+            fail("El método debería haber fallado");
+        } catch (LogicaExcepcion e1) {
+            assertTrue(true);
+        }
+    }
+    
+    @Test
+    public void test2() {
+        try {
+            controlador.crearVisita(v2);
+            fail("El método debería haber fallado");
+        } catch (LogicaExcepcion e2) {
+            assertTrue(true);
+        }
+    }
+    
+    @After
+    public void eliminar(){
+        try{
+            ConnectionManager connManager = new ConnectionManager("practicaFinal");
+            connManager.connect();
+            
+            connManager.updateDB("delete from visita where cod_visita='" + v1.getCod() + "' OR cod_visita='" + v2.getCod() + "'");
+            
+            connManager.close();
+        } catch (ClassNotFoundException ex) {
+            ex.printStackTrace();
+        }
+        catch(DAOExcepcion ex2){
+            ex2.printStackTrace();
+        }
+    }
+}

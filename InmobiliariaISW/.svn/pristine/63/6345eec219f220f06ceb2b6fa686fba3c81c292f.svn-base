@@ -1,0 +1,22 @@
+alternativasEstandar.txt
+
+Atributos
+-> Palabras completas con mayúsculas en cada palabra no inicial.
+-> Ejemplos: nombre // codigoPostal
+   
+Componentes
+-> Palabras completas con sufijos con el nombre del tipo de componente.
+-> Ejemplos: okButton // clienteList
+
+Colecciones
+-> Nombres plurales. 
+-> Ejemplos: clientes // lineasPedido
+
+Parámetros
+-> Palabras completas con mayúsculas en cada palabra no inicial. Prefijar con 'un'. 
+-> Ejemplos: unCliente // unaLineaPedido
+NOTA: En caso de un parámetro, poner solamente la inicial. Ejemplos: para cliente, c // para lineaPedido, lp
+
+Interfaces
+-> Palabras completas con mayúsculas en cada palabra no inicial. Prefijar con 'I'. 
+-> Ejemplos: IOrdenable // ISerializable

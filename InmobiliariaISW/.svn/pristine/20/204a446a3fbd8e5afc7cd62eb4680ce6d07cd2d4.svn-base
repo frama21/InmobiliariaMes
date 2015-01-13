@@ -1,0 +1,1165 @@
+<html><body>
+<h2>SVN Log</h2>
+<table border="1">
+<tr>
+<th>Rev.</th>
+<th>Date</th>
+<th>Author</th>
+<th>Msg</th>
+</tr>
+<tr>
+<td>187</td>
+<td>2015-01-12T17:02:00.770448Z</td>
+<td>jomona4</td>
+<td>Log de cambios en formato html</td>
+</tr>
+<tr>
+<td>186</td>
+<td>2015-01-12T16:28:39.238440Z</td>
+<td>frama21</td>
+<td>Bug 556 corregido.
+Se deberá seleccionar una venta o alquiler</td>
+</tr>
+<tr>
+<td>185</td>
+<td>2015-01-12T16:26:04.003883Z</td>
+<td>frama21</td>
+<td>Bug 559 corregido.
+La superficie será un entero positivo</td>
+</tr>
+<tr>
+<td>184</td>
+<td>2015-01-12T16:25:02.295547Z</td>
+<td>frama21</td>
+<td>Bug 558 corregido.
+La calificación será un entero positivo</td>
+</tr>
+<tr>
+<td>183</td>
+<td>2015-01-12T16:23:48.660819Z</td>
+<td>frama21</td>
+<td>Bug 555 corregido.
+El formato de la fecha será dd/mm/yyyy</td>
+</tr>
+<tr>
+<td>182</td>
+<td>2015-01-12T16:20:19.080765Z</td>
+<td>frama21</td>
+<td>Bug 537 corregido.
+El identificador de la nave industrial no estará vacio.</td>
+</tr>
+<tr>
+<td>181</td>
+<td>2015-01-12T16:15:46.439800Z</td>
+<td>frama21</td>
+<td>Bug 535 corregido.
+Los clientes no podrán tener ningún campo vacío.</td>
+</tr>
+<tr>
+<td>180</td>
+<td>2015-01-12T16:15:06.185146Z</td>
+<td>jomona4</td>
+<td>Captura de pantalla que demuestra que los bugs del PMD han sido resueltos.</td>
+</tr>
+<tr>
+<td>179</td>
+<td>2015-01-12T16:14:00.331013Z</td>
+<td>jomona4</td>
+<td>Informe de bugs PMD.</td>
+</tr>
+<tr>
+<td>178</td>
+<td>2015-01-12T16:13:13.960739Z</td>
+<td>frama21</td>
+<td>Bug 533 corregido.
+La fecha ahora tendrá el formato dd/mm/yyyy</td>
+</tr>
+<tr>
+<td>177</td>
+<td>2015-01-12T16:10:28.185896Z</td>
+<td>frama21</td>
+<td>Bug 532 corregido.
+El campo superficie al crear piso será un entero positivo</td>
+</tr>
+<tr>
+<td>176</td>
+<td>2015-01-12T16:08:44.678802Z</td>
+<td>jomona4</td>
+<td>Alternativa para variables locales modificada</td>
+</tr>
+<tr>
+<td>175</td>
+<td>2015-01-12T16:07:12.250486Z</td>
+<td>frama21</td>
+<td>Pequeño fallo en el controlador solucionado</td>
+</tr>
+<tr>
+<td>174</td>
+<td>2015-01-12T16:01:39.225861Z</td>
+<td>frama21</td>
+<td>Bug 564 corregido.
+El número de puertas debe ser un entero positivo.</td>
+</tr>
+<tr>
+<td>173</td>
+<td>2015-01-12T15:45:29.212168Z</td>
+<td>paalal</td>
+<td>Javadoc Generado</td>
+</tr>
+<tr>
+<td>172</td>
+<td>2015-01-12T15:32:36.885154Z</td>
+<td>frama21</td>
+<td>Corregido último bug de PMD.
+Sobraba un import</td>
+</tr>
+<tr>
+<td>171</td>
+<td>2015-01-12T15:21:37.144920Z</td>
+<td>jomona4</td>
+<td>Prueba unitaria para el bug517 modificada</td>
+</tr>
+<tr>
+<td>170</td>
+<td>2015-01-12T15:18:32.979444Z</td>
+<td>paalal</td>
+<td>Solucionado Bug 529</td>
+</tr>
+<tr>
+<td>169</td>
+<td>2015-01-12T15:18:23.055871Z</td>
+<td>paalal</td>
+<td>Solucionado Bug 528</td>
+</tr>
+<tr>
+<td>168</td>
+<td>2015-01-12T15:17:52.623077Z</td>
+<td>paalal</td>
+<td>Solucionado Bug 596</td>
+</tr>
+<tr>
+<td>167</td>
+<td>2015-01-12T15:17:27.822151Z</td>
+<td>paalal</td>
+<td>Solucionado Bug 594</td>
+</tr>
+<tr>
+<td>166</td>
+<td>2015-01-12T11:48:15.329867Z</td>
+<td>frama21</td>
+<td>Suite de pruebas y pequeño fallo corregido en el test del bug 535</td>
+</tr>
+<tr>
+<td>165</td>
+<td>2015-01-12T11:31:20.068700Z</td>
+<td>frama21</td>
+<td>Añadidas las descipciones del Throws para el JavaDoc</td>
+</tr>
+<tr>
+<td>164</td>
+<td>2015-01-12T11:22:52.509882Z</td>
+<td>frama21</td>
+<td>Comentadas las clases para generar el JavaDoc</td>
+</tr>
+<tr>
+<td>163</td>
+<td>2015-01-12T00:40:21.517911Z</td>
+<td>jomona4</td>
+<td>Añadidos métodos para realizar las pruebas unitarias del bug 516</td>
+</tr>
+<tr>
+<td>162</td>
+<td>2015-01-12T00:39:39.289851Z</td>
+<td>jomona4</td>
+<td>Prueba unitaria para el bug516 modificada</td>
+</tr>
+<tr>
+<td>161</td>
+<td>2015-01-10T19:42:52.104098Z</td>
+<td>frama21</td>
+<td>Comentarios y documentación para el javadoc</td>
+</tr>
+<tr>
+<td>160</td>
+<td>2015-01-09T20:21:20.549038Z</td>
+<td>paalal</td>
+<td>bugs 528-531 solucionados</td>
+</tr>
+<tr>
+<td>159</td>
+<td>2015-01-09T20:16:31.850179Z</td>
+<td>paalal</td>
+<td>Bugs de crear piso solucionados</td>
+</tr>
+<tr>
+<td>158</td>
+<td>2015-01-09T20:15:48.481541Z</td>
+<td>paalal</td>
+<td></td>
+</tr>
+<tr>
+<td>157</td>
+<td>2015-01-09T20:15:36.290108Z</td>
+<td>paalal</td>
+<td></td>
+</tr>
+<tr>
+<td>156</td>
+<td>2015-01-09T20:00:10.854556Z</td>
+<td>frama21</td>
+<td>Más comentarios arreglados</td>
+</tr>
+<tr>
+<td>155</td>
+<td>2015-01-09T19:59:18.402334Z</td>
+<td>frama21</td>
+<td>Comentarios arreglados</td>
+</tr>
+<tr>
+<td>154</td>
+<td>2015-01-09T19:52:41.885576Z</td>
+<td>frama21</td>
+<td>Suite a medias</td>
+</tr>
+<tr>
+<td>153</td>
+<td>2015-01-09T19:46:44.570064Z</td>
+<td>paalal</td>
+<td>Solucionados bugs 529, 530 y 531</td>
+</tr>
+<tr>
+<td>152</td>
+<td>2015-01-09T19:40:28.286853Z</td>
+<td>frama21</td>
+<td>Clase modificada para que actue con la interfaz.</td>
+</tr>
+<tr>
+<td>151</td>
+<td>2015-01-09T19:39:45.671828Z</td>
+<td>frama21</td>
+<td>9 bugs corregidos para que actuen con la interfaz.</td>
+</tr>
+<tr>
+<td>150</td>
+<td>2015-01-09T19:28:40.390506Z</td>
+<td>paalal</td>
+<td>No es un bug</td>
+</tr>
+<tr>
+<td>149</td>
+<td>2015-01-09T19:17:26.310426Z</td>
+<td>frama21</td>
+<td>Más modificaciones para poder llamar al metodo del botón</td>
+</tr>
+<tr>
+<td>148</td>
+<td>2015-01-09T19:15:45.734343Z</td>
+<td>paalal</td>
+<td>Arreglado bug 595</td>
+</tr>
+<tr>
+<td>147</td>
+<td>2015-01-09T19:08:08.536631Z</td>
+<td>paalal</td>
+<td>Comprobados los tests de los bugs 594 y 596 funcionan correctamente
+</td>
+</tr>
+<tr>
+<td>146</td>
+<td>2015-01-09T18:38:12.704964Z</td>
+<td>frama21</td>
+<td>Modificadas las pruebas para llamar al boton</td>
+</tr>
+<tr>
+<td>145</td>
+<td>2015-01-09T17:55:18.325124Z</td>
+<td>paalal</td>
+<td>reparado el DB_WRRITE_ERROR</td>
+</tr>
+<tr>
+<td>144</td>
+<td>2015-01-09T17:35:45.417358Z</td>
+<td>paalal</td>
+<td>el metodo CrearPisoJDialog ya no selecciona ningun item del jcombobox</td>
+</tr>
+<tr>
+<td>143</td>
+<td>2015-01-09T17:34:47.112587Z</td>
+<td>paalal</td>
+<td>Corregido el error nullPointerException de los bugs 528-531</td>
+</tr>
+<tr>
+<td>142</td>
+<td>2015-01-09T17:20:34.738433Z</td>
+<td>paalal</td>
+<td>modificados Bugs 528-531, instancia al jDialog despues de insertar en la base de datos</td>
+</tr>
+<tr>
+<td>141</td>
+<td>2015-01-09T14:16:01.053162Z</td>
+<td>frama21</td>
+<td>Mas cambios</td>
+</tr>
+<tr>
+<td>140</td>
+<td>2015-01-09T13:45:37.959322Z</td>
+<td>paalal</td>
+<td>Añadido metodo botonOk() en CrearPisoJDialog</td>
+</tr>
+<tr>
+<td>139</td>
+<td>2015-01-09T00:30:58.016032Z</td>
+<td>frama21</td>
+<td>Errores de PMD arreglados</td>
+</tr>
+<tr>
+<td>138</td>
+<td>2015-01-09T00:22:31.289562Z</td>
+<td>frama21</td>
+<td>Arreglados errores del PMD.
+Ahora no se usa el System.err.println</td>
+</tr>
+<tr>
+<td>137</td>
+<td>2015-01-08T23:19:42.849300Z</td>
+<td>frama21</td>
+<td>Refactor de los nombres de los métodos</td>
+</tr>
+<tr>
+<td>136</td>
+<td>2015-01-08T23:14:15.810841Z</td>
+<td>frama21</td>
+<td>Controlador actualizado</td>
+</tr>
+<tr>
+<td>135</td>
+<td>2015-01-08T21:42:20.469815Z</td>
+<td>jomona4</td>
+<td>Solucionados bugs PMD</td>
+</tr>
+<tr>
+<td>134</td>
+<td>2015-01-08T21:40:42.051193Z</td>
+<td>jomona4</td>
+<td>Solucionados bugs PMD</td>
+</tr>
+<tr>
+<td>133</td>
+<td>2015-01-08T21:30:30.003406Z</td>
+<td>jomona4</td>
+<td>Solucionados bugs PMD</td>
+</tr>
+<tr>
+<td>132</td>
+<td>2015-01-08T21:27:51.978965Z</td>
+<td>jomona4</td>
+<td>Solucionados bugs PMD</td>
+</tr>
+<tr>
+<td>131</td>
+<td>2015-01-08T21:20:59.292842Z</td>
+<td>jomona4</td>
+<td>Solucionados bugs PMD</td>
+</tr>
+<tr>
+<td>130</td>
+<td>2015-01-08T21:20:47.377852Z</td>
+<td>jomona4</td>
+<td>Solucionados bugs PMD</td>
+</tr>
+<tr>
+<td>129</td>
+<td>2015-01-08T21:14:11.559413Z</td>
+<td>jomona4</td>
+<td>Solucionados bugs PMD</td>
+</tr>
+<tr>
+<td>128</td>
+<td>2015-01-08T21:08:07.354218Z</td>
+<td>jomona4</td>
+<td>Solucionados bugs PMD</td>
+</tr>
+<tr>
+<td>127</td>
+<td>2015-01-08T21:02:39.875900Z</td>
+<td>jomona4</td>
+<td>Solucionados bugs PMD</td>
+</tr>
+<tr>
+<td>126</td>
+<td>2015-01-08T20:57:58.595148Z</td>
+<td>jomona4</td>
+<td>Solucionados bugs PMD</td>
+</tr>
+<tr>
+<td>125</td>
+<td>2015-01-08T20:57:00.647874Z</td>
+<td>jomona4</td>
+<td>Solucionados bugs PMD</td>
+</tr>
+<tr>
+<td>124</td>
+<td>2015-01-08T20:55:30.139024Z</td>
+<td>jomona4</td>
+<td>Solucionados bugs PMD</td>
+</tr>
+<tr>
+<td>123</td>
+<td>2015-01-08T20:54:45.429066Z</td>
+<td>jomona4</td>
+<td>Solucionados bugs PMD
+Aplicadas reglas de mantenibilidad</td>
+</tr>
+<tr>
+<td>122</td>
+<td>2015-01-08T20:50:02.556018Z</td>
+<td>frama21</td>
+<td>Conflictos resueltos</td>
+</tr>
+<tr>
+<td>121</td>
+<td>2015-01-08T20:49:56.495779Z</td>
+<td>jomona4</td>
+<td>Aplicadas reglas de mantenibilidad</td>
+</tr>
+<tr>
+<td>120</td>
+<td>2015-01-08T20:47:47.320171Z</td>
+<td>jomona4</td>
+<td>Solucionados bugs PMD</td>
+</tr>
+<tr>
+<td>119</td>
+<td>2015-01-08T20:47:34.902221Z</td>
+<td>jomona4</td>
+<td>Solucionados bugs PMD</td>
+</tr>
+<tr>
+<td>118</td>
+<td>2015-01-08T20:45:33.575714Z</td>
+<td>jomona4</td>
+<td>Solucionados bugs PMD</td>
+</tr>
+<tr>
+<td>117</td>
+<td>2015-01-08T20:42:40.644838Z</td>
+<td>jomona4</td>
+<td>Solucionados bugs PMD</td>
+</tr>
+<tr>
+<td>116</td>
+<td>2015-01-08T20:40:37.500174Z</td>
+<td>jomona4</td>
+<td>Solucionados bugs PMD</td>
+</tr>
+<tr>
+<td>115</td>
+<td>2015-01-08T20:37:52.034547Z</td>
+<td>jomona4</td>
+<td>Solucionados bugs PMD</td>
+</tr>
+<tr>
+<td>114</td>
+<td>2015-01-08T20:33:34.510201Z</td>
+<td>jomona4</td>
+<td>Solucionados bugs PMD
+Aplicadas reglas de mantenibilidad</td>
+</tr>
+<tr>
+<td>113</td>
+<td>2015-01-08T20:29:25.591566Z</td>
+<td>frama21</td>
+<td>Corregido el bug</td>
+</tr>
+<tr>
+<td>112</td>
+<td>2015-01-08T20:29:06.218895Z</td>
+<td>frama21</td>
+<td>Pruebas correctas</td>
+</tr>
+<tr>
+<td>111</td>
+<td>2015-01-08T20:28:41.001087Z</td>
+<td>jomona4</td>
+<td>Solucionados bugs PMD
+Aplicadas reglas de mantenibilidad</td>
+</tr>
+<tr>
+<td>110</td>
+<td>2015-01-08T20:25:25.804186Z</td>
+<td>jomona4</td>
+<td>Solucionados bugs PMD
+Aplicadas reglas de mantenibilidad</td>
+</tr>
+<tr>
+<td>109</td>
+<td>2015-01-08T20:23:56.497385Z</td>
+<td>jomona4</td>
+<td>Solucionados bugs PMD
+Aplicadas reglas de mantenibilidad</td>
+</tr>
+<tr>
+<td>108</td>
+<td>2015-01-08T20:19:14.733685Z</td>
+<td>jomona4</td>
+<td>Solucionados bugs PMD
+Aplicadas reglas de mantenibilidad</td>
+</tr>
+<tr>
+<td>107</td>
+<td>2015-01-08T20:10:27.663554Z</td>
+<td>paalal</td>
+<td>Prueba jUnit CrearPisoJDialogTest_Bug531</td>
+</tr>
+<tr>
+<td>106</td>
+<td>2015-01-08T20:10:23.271088Z</td>
+<td>jomona4</td>
+<td>Solucionados bugs PMD</td>
+</tr>
+<tr>
+<td>105</td>
+<td>2015-01-08T20:10:10.694378Z</td>
+<td>paalal</td>
+<td>Prueba jUnit CrearPisoJDialogTest_Bug530</td>
+</tr>
+<tr>
+<td>104</td>
+<td>2015-01-08T20:09:53.440148Z</td>
+<td>paalal</td>
+<td>Prueba jUnit CrearPisoJDialogTest_Bug529</td>
+</tr>
+<tr>
+<td>103</td>
+<td>2015-01-08T20:09:31.272263Z</td>
+<td>paalal</td>
+<td>Prueba jUnit CrearPisoJDialogTest_Bug528</td>
+</tr>
+<tr>
+<td>102</td>
+<td>2015-01-08T20:09:03.767159Z</td>
+<td>paalal</td>
+<td>CrearPisoJDialog añadidos metodos para hacer las pruebas</td>
+</tr>
+<tr>
+<td>101</td>
+<td>2015-01-08T20:02:06.501848Z</td>
+<td>jomona4</td>
+<td>Solucionados bugs PMD</td>
+</tr>
+<tr>
+<td>100</td>
+<td>2015-01-08T20:00:55.753581Z</td>
+<td>jomona4</td>
+<td>Solucionados bugs PMD</td>
+</tr>
+<tr>
+<td>99</td>
+<td>2015-01-08T19:46:00.633350Z</td>
+<td>jomona4</td>
+<td>Solucionados bugs PMD
+Aplicadas reglas de mantenibilidad</td>
+</tr>
+<tr>
+<td>98</td>
+<td>2015-01-08T19:40:01.402184Z</td>
+<td>jomona4</td>
+<td>Solucionados bugs PMD
+Aplicadas reglas de mantenibilidad</td>
+</tr>
+<tr>
+<td>97</td>
+<td>2015-01-08T19:34:55.467757Z</td>
+<td>jomona4</td>
+<td>Solucionados bugs PMD
+Aplicadas reglas de mantenibilidad</td>
+</tr>
+<tr>
+<td>96</td>
+<td>2015-01-08T19:25:59.274893Z</td>
+<td>jomona4</td>
+<td>Solucionados bugs PMD
+Aplicadas reglas de mantenibilidad</td>
+</tr>
+<tr>
+<td>95</td>
+<td>2015-01-08T19:23:12.973226Z</td>
+<td>jomona4</td>
+<td>Alternativa para parámetros modificada</td>
+</tr>
+<tr>
+<td>94</td>
+<td>2015-01-08T19:20:28.427954Z</td>
+<td>jomona4</td>
+<td>Alternativa para parámetros modificada</td>
+</tr>
+<tr>
+<td>93</td>
+<td>2015-01-08T19:10:12.807020Z</td>
+<td>jomona4</td>
+<td>Solucionados bugs PMD</td>
+</tr>
+<tr>
+<td>92</td>
+<td>2015-01-08T19:04:37.949793Z</td>
+<td>jomona4</td>
+<td>Solucionados bugs PMD</td>
+</tr>
+<tr>
+<td>91</td>
+<td>2015-01-08T18:51:06.118019Z</td>
+<td>paalal</td>
+<td>Prueba jUnit CrearPisoJDialogTest_Bug531</td>
+</tr>
+<tr>
+<td>90</td>
+<td>2015-01-08T18:42:41.189953Z</td>
+<td>paalal</td>
+<td>NuevaTransaccion_Bug583, ahora creo q si...</td>
+</tr>
+<tr>
+<td>89</td>
+<td>2015-01-08T18:40:28.603302Z</td>
+<td>paalal</td>
+<td>Prueba NuevaTransaccionTest_Bug583 corregida, creo</td>
+</tr>
+<tr>
+<td>88</td>
+<td>2015-01-08T18:27:24.720242Z</td>
+<td>paalal</td>
+<td>Comit de la prueba jUnit NuevaTransaccionTest_Bug583
+pero no se si funciona bien</td>
+</tr>
+<tr>
+<td>87</td>
+<td>2015-01-08T18:21:17.435171Z</td>
+<td>jomona4</td>
+<td>Alternativa para parámetros modificada</td>
+</tr>
+<tr>
+<td>86</td>
+<td>2015-01-08T18:11:01.156399Z</td>
+<td>jomona4</td>
+<td>Alternativas a adoptar</td>
+</tr>
+<tr>
+<td>85</td>
+<td>2015-01-08T17:28:42.591569Z</td>
+<td>frama21</td>
+<td>Corregidas todas las pruebas JUnit de los bugs.
+Subidas también las correspondientes clases de la capa presentación.</td>
+</tr>
+<tr>
+<td>84</td>
+<td>2015-01-08T12:47:25.899333Z</td>
+<td>frama21</td>
+<td>mas de piso</td>
+</tr>
+<tr>
+<td>83</td>
+<td>2015-01-08T12:42:32.619046Z</td>
+<td>frama21</td>
+<td>CrearPiso con pruebas, todavia por acabar</td>
+</tr>
+<tr>
+<td>82</td>
+<td>2015-01-08T01:25:52.314075Z</td>
+<td>jomona4</td>
+<td>Prueba unitaria bug517</td>
+</tr>
+<tr>
+<td>81</td>
+<td>2015-01-08T01:25:33.018233Z</td>
+<td>jomona4</td>
+<td>Prueba unitaria bug516</td>
+</tr>
+<tr>
+<td>80</td>
+<td>2015-01-08T01:20:12.282918Z</td>
+<td>jomona4</td>
+<td>Bug 517 corregido</td>
+</tr>
+<tr>
+<td>79</td>
+<td>2015-01-08T01:15:49.667472Z</td>
+<td>jomona4</td>
+<td>Mejorada comprobación de fecha correcta (bug 516)</td>
+</tr>
+<tr>
+<td>78</td>
+<td>2015-01-08T00:37:34.628685Z</td>
+<td>jomona4</td>
+<td>Bug 516 resuelto</td>
+</tr>
+<tr>
+<td>77</td>
+<td>2015-01-08T00:35:25.452160Z</td>
+<td>jomona4</td>
+<td>Prueba unitaria para el bug517 modificada</td>
+</tr>
+<tr>
+<td>76</td>
+<td>2015-01-08T00:35:04.764251Z</td>
+<td>jomona4</td>
+<td>Prueba unitaria para el bug516 modificada</td>
+</tr>
+<tr>
+<td>75</td>
+<td>2015-01-07T20:36:56.524970Z</td>
+<td>paalal</td>
+<td>Prueba jUnit NuevaTransaccion (Falta eliminar los datos introducidos) </td>
+</tr>
+<tr>
+<td>74</td>
+<td>2015-01-07T19:49:25.114545Z</td>
+<td>frama21</td>
+<td>Clases de la capa presentación modificadas para admitir las pruebas</td>
+</tr>
+<tr>
+<td>73</td>
+<td>2015-01-07T19:48:54.716405Z</td>
+<td>frama21</td>
+<td>Pruebas varias </td>
+</tr>
+<tr>
+<td>72</td>
+<td>2015-01-07T19:48:08.389094Z</td>
+<td>frama21</td>
+<td>Pruebas del bug 537</td>
+</tr>
+<tr>
+<td>71</td>
+<td>2015-01-07T19:35:46.022689Z</td>
+<td>paalal</td>
+<td>Modificado CrearAsesor</td>
+</tr>
+<tr>
+<td>70</td>
+<td>2015-01-07T19:34:55.142593Z</td>
+<td>paalal</td>
+<td>Modificada la clase CrearAsesor para poder hacer las pruebas jUnit</td>
+</tr>
+<tr>
+<td>69</td>
+<td>2015-01-07T19:33:03.958493Z</td>
+<td>paalal</td>
+<td>Prueba jUnit 596 - Crear Asesor</td>
+</tr>
+<tr>
+<td>68</td>
+<td>2015-01-07T19:32:30.392917Z</td>
+<td>paalal</td>
+<td>Puruba jUnit 595 - Crear Asesor</td>
+</tr>
+<tr>
+<td>67</td>
+<td>2015-01-07T19:31:46.727096Z</td>
+<td>paalal</td>
+<td>Prueba jUnit bug 594 - Crear Asesor</td>
+</tr>
+<tr>
+<td>66</td>
+<td>2015-01-07T18:44:12.214328Z</td>
+<td>frama21</td>
+<td>Cliente actualizado </td>
+</tr>
+<tr>
+<td>65</td>
+<td>2015-01-07T17:17:11.013363Z</td>
+<td>jomona4</td>
+<td>Suite de pruebas para los bugs identificados. 
+¡Faltan pruebas por introducir!</td>
+</tr>
+<tr>
+<td>64</td>
+<td>2015-01-07T16:24:29.684395Z</td>
+<td>jomona4</td>
+<td>Pruba unitaria para el bug 517</td>
+</tr>
+<tr>
+<td>63</td>
+<td>2015-01-07T16:24:19.050827Z</td>
+<td>jomona4</td>
+<td>Pruba unitaria para el bug 516</td>
+</tr>
+<tr>
+<td>62</td>
+<td>2015-01-07T16:15:00.217588Z</td>
+<td>jomona4</td>
+<td>Añadida comprobación necesaria para realizar prueba unitaria (comprueba la visibilidad)</td>
+</tr>
+<tr>
+<td>61</td>
+<td>2015-01-04T16:06:33.285651Z</td>
+<td>jomona4</td>
+<td>Añadidos metodos setFecha(), setCodigoVisita y clickBtnCrear() para poder realizar las prubas JUnit</td>
+</tr>
+<tr>
+<td>60</td>
+<td>2015-01-04T12:18:05.945997Z</td>
+<td>frama21</td>
+<td>eliminados imports innecesarios</td>
+</tr>
+<tr>
+<td>59</td>
+<td>2015-01-04T12:08:24.908791Z</td>
+<td>frama21</td>
+<td>Pruebas Junit para crear clientes sin campos vacíos</td>
+</tr>
+<tr>
+<td>58</td>
+<td>2015-01-04T12:05:32.995077Z</td>
+<td>frama21</td>
+<td>Añadidos los métodos para hacer las pruebas JUnit</td>
+</tr>
+<tr>
+<td>57</td>
+<td>2014-12-30T20:18:39.595356Z</td>
+<td>frama21</td>
+<td>Test para el formato de la fecha a la hora de crear un piso</td>
+</tr>
+<tr>
+<td>56</td>
+<td>2014-12-30T20:18:09.222150Z</td>
+<td>frama21</td>
+<td>Pruebas del campo de superficie total cuando vamos a crear un nuevo piso.
+Añadidas las inicializaciones</td>
+</tr>
+<tr>
+<td>55</td>
+<td>2014-12-30T19:51:03.119247Z</td>
+<td>frama21</td>
+<td>Pruebas del campo de superficie total cuando vamos a crear un nuevo piso.</td>
+</tr>
+<tr>
+<td>54</td>
+<td>2014-12-30T19:41:04.789104Z</td>
+<td>frama21</td>
+<td>Campo de numPuertas comprobado</td>
+</tr>
+<tr>
+<td>53</td>
+<td>2014-12-30T19:40:45.765185Z</td>
+<td>frama21</td>
+<td>Modificacion de la prueba al crear clientes
+(Ahora no inserta en la base de datos)</td>
+</tr>
+<tr>
+<td>52</td>
+<td>2014-12-30T19:35:02.883719Z</td>
+<td>frama21</td>
+<td>Campo de numPuertas comprobado</td>
+</tr>
+<tr>
+<td>51</td>
+<td>2014-12-30T19:34:06.617586Z</td>
+<td>frama21</td>
+<td>Modificacion de la prueba al crear clientes
+(Ahora no inserta en la base de datos)</td>
+</tr>
+<tr>
+<td>50</td>
+<td>2014-12-30T19:27:24.687611Z</td>
+<td>frama21</td>
+<td>Prueba para comprobar el campo de numero de puertas al crear una Nave Industrial acabado</td>
+</tr>
+<tr>
+<td>49</td>
+<td>2014-12-30T18:55:16.911204Z</td>
+<td>frama21</td>
+<td>Arreglo al primer bug
+Acabado</td>
+</tr>
+<tr>
+<td>48</td>
+<td>2014-12-29T16:55:20.190933Z</td>
+<td>frama21</td>
+<td>Borro la clase de prueba que hice</td>
+</tr>
+<tr>
+<td>47</td>
+<td>2014-12-29T16:49:23.474724Z</td>
+<td>frama21</td>
+<td>Primera pruba (Creo que está mal)
+Hay que revisarla.</td>
+</tr>
+<tr>
+<td>46</td>
+<td>2014-12-29T16:44:44.492206Z</td>
+<td>frama21</td>
+<td>Primera pruba (Creo que está mal)
+Hay que revisarla.</td>
+</tr>
+<tr>
+<td>45</td>
+<td>2014-12-29T16:26:35.312576Z</td>
+<td>frama21</td>
+<td>prueba de subida</td>
+</tr>
+<tr>
+<td>44</td>
+<td>2014-12-28T13:03:44.343482Z</td>
+<td>frama21</td>
+<td>prueba Fran</td>
+</tr>
+<tr>
+<td>43</td>
+<td>2014-12-09T20:18:45.799417Z</td>
+<td>jomona4</td>
+<td>Test de prueba para el bug 519. No existe tal funcionamiento incorrecto, las visitas se pueden insertar si se introducen los datos correctos. Mantenemos el test a modo orientativo...</td>
+</tr>
+<tr>
+<td>42</td>
+<td>2014-12-03T15:21:56.973349Z</td>
+<td>frama21</td>
+<td>Prueba de subida</td>
+</tr>
+<tr>
+<td>41</td>
+<td>2014-11-24T19:32:50.786474Z</td>
+<td>paalal</td>
+<td>Añadida la clase prueba2.java donde realizare mis tests, Pau</td>
+</tr>
+<tr>
+<td>40</td>
+<td>2014-11-17T19:36:43.508350Z</td>
+<td>paalal</td>
+<td>Cambio del hsqldb en propiedades del proyecto</td>
+</tr>
+<tr>
+<td>39</td>
+<td>2014-11-17T19:20:39.658162Z</td>
+<td>jomona4</td>
+<td>wrong path</td>
+</tr>
+<tr>
+<td>38</td>
+<td>2014-11-17T19:20:09.084050Z</td>
+<td>jomona4</td>
+<td>Primer commit ProyectoBF</td>
+</tr>
+<tr>
+<td>37</td>
+<td>2014-11-17T19:16:37.787694Z</td>
+<td>jomona4</td>
+<td>wrong path</td>
+</tr>
+<tr>
+<td>36</td>
+<td>2014-11-17T19:15:40.941949Z</td>
+<td>jomona4</td>
+<td>Primer commit de PruebasBF</td>
+</tr>
+<tr>
+<td>35</td>
+<td>2014-11-17T19:04:58.018287Z</td>
+<td>jomona4</td>
+<td>Initial import.</td>
+</tr>
+<tr>
+<td>34</td>
+<td>2014-11-17T19:04:36.067032Z</td>
+<td>jomona4</td>
+<td>Initial import.</td>
+</tr>
+<tr>
+<td>33</td>
+<td>2014-11-17T19:00:44.590533Z</td>
+<td>jomona4</td>
+<td>wrong path</td>
+</tr>
+<tr>
+<td>32</td>
+<td>2014-11-17T19:00:31.410819Z</td>
+<td>jomona4</td>
+<td>wrong path</td>
+</tr>
+<tr>
+<td>31</td>
+<td>2014-11-17T18:59:26.360371Z</td>
+<td>jomona4</td>
+<td>Initial import.</td>
+</tr>
+<tr>
+<td>30</td>
+<td>2014-11-17T18:58:21.824740Z</td>
+<td>jomona4</td>
+<td>Initial import.</td>
+</tr>
+<tr>
+<td>29</td>
+<td>2014-09-29T18:28:55.062840Z</td>
+<td>jomona4</td>
+<td>Añadido comentario</td>
+</tr>
+<tr>
+<td>28</td>
+<td>2014-09-29T18:24:10.781757Z</td>
+<td>frama21</td>
+<td>14961456</td>
+</tr>
+<tr>
+<td>27</td>
+<td>2014-09-29T18:19:08.998621Z</td>
+<td>jomona4</td>
+<td>Añadido comentario</td>
+</tr>
+<tr>
+<td>26</td>
+<td>2014-09-29T18:08:08.026245Z</td>
+<td>frama21</td>
+<td>Resuelto
+</td>
+</tr>
+<tr>
+<td>25</td>
+<td>2014-09-29T18:01:29.481323Z</td>
+<td>jomona4</td>
+<td>Prueba conflicto</td>
+</tr>
+<tr>
+<td>24</td>
+<td>2014-09-29T17:58:21.574403Z</td>
+<td>frama21</td>
+<td>Comparación de las posiciones</td>
+</tr>
+<tr>
+<td>23</td>
+<td>2014-09-29T17:57:49.266346Z</td>
+<td>frama21</td>
+<td>Añadidas getX y getY</td>
+</tr>
+<tr>
+<td>22</td>
+<td>2014-09-29T17:52:55.751307Z</td>
+<td>jomona4</td>
+<td>Figura + Circulo + Arranque (a medias)</td>
+</tr>
+<tr>
+<td>21</td>
+<td>2014-09-29T17:38:52.477731Z</td>
+<td>jomona4</td>
+<td>Primer commit</td>
+</tr>
+<tr>
+<td>20</td>
+<td>2014-09-29T17:37:50.713358Z</td>
+<td>jomona4</td>
+<td>Initial import.</td>
+</tr>
+<tr>
+<td>19</td>
+<td>2014-09-29T17:37:28.008535Z</td>
+<td>jomona4</td>
+<td></td>
+</tr>
+<tr>
+<td>18</td>
+<td>2014-09-29T17:37:19.561686Z</td>
+<td>jomona4</td>
+<td></td>
+</tr>
+<tr>
+<td>17</td>
+<td>2014-09-29T17:37:06.262642Z</td>
+<td>jomona4</td>
+<td></td>
+</tr>
+<tr>
+<td>16</td>
+<td>2014-09-29T17:36:55.530207Z</td>
+<td>jomona4</td>
+<td></td>
+</tr>
+<tr>
+<td>15</td>
+<td>2014-09-29T17:36:47.810579Z</td>
+<td>jomona4</td>
+<td></td>
+</tr>
+<tr>
+<td>14</td>
+<td>2014-09-29T17:36:34.113356Z</td>
+<td>jomona4</td>
+<td></td>
+</tr>
+<tr>
+<td>13</td>
+<td>2014-09-29T17:36:21.910969Z</td>
+<td>jomona4</td>
+<td></td>
+</tr>
+<tr>
+<td>12</td>
+<td>2014-09-29T17:36:12.322352Z</td>
+<td>jomona4</td>
+<td></td>
+</tr>
+<tr>
+<td>11</td>
+<td>2014-09-29T17:32:58.761759Z</td>
+<td>crireca</td>
+<td></td>
+</tr>
+<tr>
+<td>10</td>
+<td>2014-09-29T17:31:19.570460Z</td>
+<td>crireca</td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td>2014-09-29T17:27:16.199085Z</td>
+<td>crireca</td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td>2014-09-29T17:27:03.522020Z</td>
+<td>crireca</td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>2014-09-29T17:26:57.628205Z</td>
+<td>crireca</td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>2014-09-29T17:26:46.513556Z</td>
+<td>crireca</td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>2014-09-29T17:26:32.763617Z</td>
+<td>crireca</td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>2014-09-29T17:25:44.011586Z</td>
+<td>crireca</td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>2014-09-29T17:25:20.397444Z</td>
+<td>crireca</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>2014-09-29T17:24:57.935192Z</td>
+<td>crireca</td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>2014-09-29T17:24:30.552308Z</td>
+<td>crireca</td>
+<td></td>
+</tr>
+</table>
+</body></html>

@@ -1,0 +1,157 @@
+src/logica/Adosado.java:5:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'gastos_comunidad' is not final.
+src/logica/Adosado.java:9:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'superficie_patio' is not final.
+src/logica/Adosado.java:10:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'gastos_comunidad' is not final.
+src/logica/Adosado.java:10:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'numero_plantas' is not final.
+src/logica/Adosado.java:10:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'superficie_plantas' is not final.
+src/logica/Adosado.java:23:	Method names should not contain underscores
+src/logica/Adosado.java:23:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'gastos_comunidad' is not final.
+src/logica/Adosado.java:31:	Method names should not contain underscores
+src/logica/Asesor.java:7:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'codigo_emp' is not final.
+src/logica/Asesor.java:13:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'codigo_emp' is not final.
+src/logica/Asesor.java:19:	Method names should not contain underscores
+src/logica/Asesor.java:19:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'codigo_emp' is not final.
+src/logica/Asesor.java:23:	Method names should not contain underscores
+src/logica/BajoComercial.java:5:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'num_puertas' is not final.
+src/logica/BajoComercial.java:8:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'num_puertas' is not final.
+src/logica/BajoComercial.java:16:	Method names should not contain underscores
+src/logica/BajoComercial.java:16:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'num_puertas' is not final.
+src/logica/BajoComercial.java:20:	Method names should not contain underscores
+src/logica/CasaPueblo.java:8:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'numero_plantas' is not final.
+src/logica/CasaPueblo.java:9:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'superficie_plantas' is not final.
+src/logica/Controlador.java:10:	A class which only has private constructors should be final
+src/logica/Controlador.java:29:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'ref_controlador' is not final.
+src/logica/Controlador.java:318:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'cod_Id' is not final.
+src/logica/Hipoteca.java:4:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'cantidad_pendiente' is not final.
+src/logica/Hipoteca.java:7:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'cantidad_pendiente' is not final.
+src/logica/Hipoteca.java:13:	Method names should not contain underscores
+src/logica/Hipoteca.java:13:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'cantidad_pendiente' is not final.
+src/logica/Hipoteca.java:16:	Method names should not contain underscores
+src/logica/Inmobiliaria.java:29:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'cod_emp' is not final.
+src/logica/Inmobiliaria.java:34:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'cod_emp' is not final.
+src/logica/Inmobiliaria.java:68:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'cod_id' is not final.
+src/logica/Inmobiliaria.java:73:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'cod_id' is not final.
+src/logica/Inmueble.java:9:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'COD_ID' is not final.
+src/logica/Inmueble.java:9:	Variables should start with a lowercase character, 'COD_ID' starts with uppercase character.
+src/logica/Inmueble.java:10:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'venta_alquiler' is not final.
+src/logica/Inmueble.java:13:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'fecha_alta' is not final.
+src/logica/Inmueble.java:14:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'superficie_total' is not final.
+src/logica/Inmueble.java:30:	Method names should not contain underscores
+src/logica/Inmueble.java:30:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'venta_alquiler' is not final.
+src/logica/Inmueble.java:33:	Method names should not contain underscores
+src/logica/Inmueble.java:48:	Method names should not contain underscores
+src/logica/Inmueble.java:48:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'fecha_alta' is not final.
+src/logica/Inmueble.java:51:	Method names should not contain underscores
+src/logica/Inmueble.java:54:	Method names should not contain underscores
+src/logica/Inmueble.java:54:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'superficie_total' is not final.
+src/logica/Inmueble.java:57:	Method names should not contain underscores
+src/logica/Inmueble.java:97:	Method names should not contain underscores
+src/logica/Inmueble.java:97:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'cod_ID' is not final.
+src/logica/Inmueble.java:101:	Method names should not contain underscores
+src/logica/Interesado.java:5:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'preciomaximo_compra' is not final.
+src/logica/Interesado.java:6:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'preciomaximo_alquiler' is not final.
+src/logica/Interesado.java:10:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'preciomaximo_alquiler' is not final.
+src/logica/Interesado.java:10:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'preciomaximo_compra' is not final.
+src/logica/Interesado.java:15:	Method names should not contain underscores
+src/logica/Interesado.java:15:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'preciomaximo_compra' is not final.
+src/logica/Interesado.java:18:	Method names should not contain underscores
+src/logica/Interesado.java:21:	Method names should not contain underscores
+src/logica/Interesado.java:21:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'preciomaximo_alquiler' is not final.
+src/logica/Interesado.java:24:	Method names should not contain underscores
+src/logica/NaveIndustrial.java:5:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'num_puertas' is not final.
+src/logica/NaveIndustrial.java:9:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'num_puertas' is not final.
+src/logica/NaveIndustrial.java:18:	Method names should not contain underscores
+src/logica/NaveIndustrial.java:18:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'num_puertas' is not final.
+src/logica/NaveIndustrial.java:21:	Method names should not contain underscores
+src/logica/Piso.java:4:	Avoid short class names like Piso
+src/logica/Piso.java:6:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'num_habitaciones' is not final.
+src/logica/Piso.java:12:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'num_habita' is not final.
+src/logica/Piso.java:22:	Method names should not contain underscores
+src/logica/Piso.java:22:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'num_habitaciones' is not final.
+src/logica/Piso.java:26:	Method names should not contain underscores
+src/logica/Transaccion.java:6:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'precio_final' is not final.
+src/logica/Transaccion.java:8:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'compra_alquiler' is not final.
+src/logica/Transaccion.java:11:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'compra_alquiler' is not final.
+src/logica/Transaccion.java:11:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'precio_final' is not final.
+src/logica/Transaccion.java:19:	Method names should not contain underscores
+src/logica/Transaccion.java:19:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'precio_final' is not final.
+src/logica/Transaccion.java:22:	Method names should not contain underscores
+src/logica/Transaccion.java:31:	Method names should not contain underscores
+src/logica/Transaccion.java:31:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'compra_alquiler' is not final.
+src/logica/Transaccion.java:34:	Method names should not contain underscores
+src/logica/ZonaGeografica.java:47:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'cod_id' is not final.
+src/logica/ZonaGeografica.java:52:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'cod_id' is not final.
+src/persistencia/AsesorDAOImp.java:22:	Avoid prefixing parameters by in, out or inOut. Uses Javadoc to document this behavior.
+src/persistencia/DAL.java:17:	A class which only has private constructors should be final
+src/persistencia/DAL.java:17:	Avoid short class names like DAL
+src/persistencia/DAL.java:88:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'cod_Id' is not final.
+src/persistencia/DAL.java:93:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'cod_Id' is not final.
+src/persistencia/DAL.java:99:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'cod_Id' is not final.
+src/persistencia/DAL.java:105:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'cod_Id' is not final.
+src/persistencia/InmuebleDAOImp.java:26:	Avoid prefixing parameters by in, out or inOut. Uses Javadoc to document this behavior.
+src/presentacion/ConsultaPisosJDialog.java:40:	Consider using varargs for methods or constructors which take an array the last parameter.
+src/presentacion/ConsultaPisosJDialog.java:55:	System.out.println is used
+src/presentacion/ConsultarAsesores.java:40:	Consider using varargs for methods or constructors which take an array the last parameter.
+src/presentacion/ConsultarAsesores.java:55:	System.out.println is used
+src/presentacion/ConsultarClientes.java:40:	Consider using varargs for methods or constructors which take an array the last parameter.
+src/presentacion/ConsultarClientes.java:55:	System.out.println is used
+src/presentacion/ConsultarInmueblesNo.java:49:	Consider using varargs for methods or constructors which take an array the last parameter.
+src/presentacion/ConsultarInmueblesNo.java:64:	System.out.println is used
+src/presentacion/ConsultarInmueblesNo.java:120:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'lblListadoDeLos_1' is not final.
+src/presentacion/ConsultarNaveIndustrial.java:39:	Consider using varargs for methods or constructors which take an array the last parameter.
+src/presentacion/ConsultarNaveIndustrial.java:54:	System.out.println is used
+src/presentacion/ConsultarTodosAsesores.java:36:	Consider using varargs for methods or constructors which take an array the last parameter.
+src/presentacion/ConsultarTodosAsesores.java:51:	System.out.println is used
+src/presentacion/ConsultarTodosClientes.java:40:	Consider using varargs for methods or constructors which take an array the last parameter.
+src/presentacion/ConsultarTodosClientes.java:55:	System.out.println is used
+src/presentacion/ConsultarVisitaOferta.java:46:	Consider using varargs for methods or constructors which take an array the last parameter.
+src/presentacion/ConsultarVisitaOferta.java:61:	System.out.println is used
+src/presentacion/ConsultarVisitaOferta.java:117:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'lblListadoDeLos_1' is not final.
+src/presentacion/CreadoPor.java:25:	Consider using varargs for methods or constructors which take an array the last parameter.
+src/presentacion/CrearAsesor.java:30:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'textCod_Emp' is not final.
+src/presentacion/CrearAsesor.java:37:	Consider using varargs for methods or constructors which take an array the last parameter.
+src/presentacion/CrearAsesor.java:64:	System.out.println is used
+src/presentacion/CrearAsesor.java:90:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'lblNewLabel_1' is not final.
+src/presentacion/CrearAsesor.java:112:	Variables should start with a lowercase character, 'ActionListener' starts with uppercase character.
+src/presentacion/CrearCliente.java:37:	Consider using varargs for methods or constructors which take an array the last parameter.
+src/presentacion/CrearCliente.java:72:	System.out.println is used
+src/presentacion/CrearCliente.java:101:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'lblNewLabel_1' is not final.
+src/presentacion/CrearCliente.java:106:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'lblNewLabel_2' is not final.
+src/presentacion/CrearNaveIndustrial.java:52:	Consider using varargs for methods or constructors which take an array the last parameter.
+src/presentacion/CrearNaveIndustrial.java:91:	System.out.println is used
+src/presentacion/CrearNaveIndustrial.java:118:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'lblNewLabel_1' is not final.
+src/presentacion/CrearNaveIndustrial.java:127:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'lblNewLabel_2' is not final.
+src/presentacion/CrearNaveIndustrial.java:136:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'lblNewLabel_3' is not final.
+src/presentacion/CrearNaveIndustrial.java:145:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'lblNewLabel_4' is not final.
+src/presentacion/CrearNaveIndustrial.java:223:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'lblNewLabel_5' is not final.
+src/presentacion/CrearNaveIndustrial.java:239:	Variables should start with a lowercase character, 'ActionListener' starts with uppercase character.
+src/presentacion/CrearPisoJDialog.java:52:	Consider using varargs for methods or constructors which take an array the last parameter.
+src/presentacion/CrearPisoJDialog.java:67:	System.out.println is used
+src/presentacion/CrearPisoJDialog.java:94:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'lblNewLabel_1' is not final.
+src/presentacion/CrearPisoJDialog.java:103:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'lblNewLabel_2' is not final.
+src/presentacion/CrearPisoJDialog.java:112:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'lblNewLabel_3' is not final.
+src/presentacion/CrearPisoJDialog.java:121:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'lblNewLabel_4' is not final.
+src/presentacion/CrearPisoJDialog.java:208:	Variables should start with a lowercase character, 'ActionListener' starts with uppercase character.
+src/presentacion/InmobiliariaApp.java:26:	Consider using varargs for methods or constructors which take an array the last parameter.
+src/presentacion/InmobiliariaApp.java:54:	System.out.println is used
+src/presentacion/InmobiliariaApp.java:190:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'separator_3' is not final.
+src/presentacion/InmobiliariaApp.java:219:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'mntmNewMenuItem_1' is not final.
+src/presentacion/InmobiliariaApp.java:231:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'separator_2' is not final.
+src/presentacion/InmobiliariaApp.java:249:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'mntmNewMenuItem_2' is not final.
+src/presentacion/InmobiliariaApp.java:252:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'separator_4' is not final.
+src/presentacion/InmobiliariaApp.java:255:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'menuItem_1' is not final.
+src/presentacion/InmobiliariaApp.java:301:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'separator_5' is not final.
+src/presentacion/InmobiliariaApp.java:304:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'menuItem_2' is not final.
+src/presentacion/InmobiliariaApp.java:328:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'separator_6' is not final.
+src/presentacion/InmobiliariaApp.java:331:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'menuItem_3' is not final.
+src/presentacion/NuevaOferta.java:38:	Consider using varargs for methods or constructors which take an array the last parameter.
+src/presentacion/NuevaOferta.java:53:	System.out.println is used
+src/presentacion/NuevaOferta.java:145:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'lblNewLabel_1' is not final.
+src/presentacion/NuevaOferta.java:149:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'lblNewLabel_2' is not final.
+src/presentacion/NuevaTransaccion.java:46:	Consider using varargs for methods or constructors which take an array the last parameter.
+src/presentacion/NuevaTransaccion.java:72:	System.out.println is used
+src/presentacion/NuevaTransaccion.java:161:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'label_1' is not final.
+src/presentacion/NuevaTransaccion.java:175:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'label_2' is not final.
+src/presentacion/NuevaTransaccion.java:183:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'label_3' is not final.
+src/presentacion/NuevaVisita.java:41:	Consider using varargs for methods or constructors which take an array the last parameter.
+src/presentacion/NuevaVisita.java:69:	System.out.println is used
+src/presentacion/NuevaVisita.java:152:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'separator_1' is not final.

@@ -1,0 +1,34 @@
+package logica;
+
+public class Adosado extends CasaPueblo {
+	private String gastosComunidad;
+
+	public Adosado(String unCodigo, String unaCalle, String unaLocalidad, String unaFechaAlta,
+			String unaSuperficieTot, String unaVentaAlquiler, String unaSuperficiePatio,
+			String unNumeroPlantas, String unaSuperficiePlantas, String unosGastosComunidad, Asesor unAsesor, Cliente unCliente) {
+
+		super(unCodigo, unaCalle, unaLocalidad, unaFechaAlta, unaSuperficieTot, unaVentaAlquiler, unaSuperficiePatio,
+				unNumeroPlantas, unaSuperficiePlantas,unAsesor, unCliente);
+
+		gastosComunidad = unosGastosComunidad;
+	}
+
+	
+	/**
+	 * @param gc
+	 * 
+	 * Establece el valor de la variable gastos_comunidad.
+	 */
+	public void setGastosComunidad(String gc) {
+		gastosComunidad = gc;
+	}
+
+	
+	/**
+	 * Devuelve el valor de la variable gastos_comunidad
+	 * @return 
+	 */
+	public String getGastosComunidad() {
+		return gastosComunidad;
+	}
+}//Fin de la clase.

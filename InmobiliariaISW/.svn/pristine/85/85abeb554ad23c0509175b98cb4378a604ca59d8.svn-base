@@ -1,0 +1,212 @@
+package presentacion;
+
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.util.ArrayList;
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.JTable;
+import javax.swing.JScrollPane;
+import logica.Asesor;
+import logica.Controlador;
+import logica.Inmueble;
+import javax.swing.ScrollPaneConstants;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Color;
+import java.awt.Font;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+
+
+public class ConsultarAsesores extends JDialog {
+
+
+	private static final long serialVersionUID = 1L;
+
+	private final JPanel contentPanel = new JPanel();
+	private static Controlador control;
+	private JTable tableAsesor;
+	int filas=0;
+	private JTextField textFieldAsesor;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		try {
+			ConsultarAsesores dialog = new ConsultarAsesores( control);
+			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+			dialog.setVisible(true);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	//Inicialización de los objetos necesarios de la capa de negocio
+	private void initDominio() {
+		try{
+			control = Controlador.dameControlador();
+		}catch (Exception e){
+			System.out.println(e.getMessage());
+		}
+	}
+
+
+	/**
+	 * Create the dialog.
+	 */
+	public ConsultarAsesores(Controlador control1) {
+		setBackground(new Color(255, 255, 255));
+
+		//Método que inicializa el controlador.
+		initDominio();
+
+		setBounds(100, 100, 900, 444);
+		getContentPane().setLayout(new BorderLayout());
+		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
+		getContentPane().add(contentPanel, BorderLayout.CENTER);
+		setTitle("Consultar Asesores por Inmueble");
+		contentPanel.setLayout(null);
+		{
+			JScrollPane scrollPane = new JScrollPane();
+			scrollPane.setLocation(10, 79);
+			scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+			scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+
+
+			scrollPane.setSize(864,283);
+
+
+			contentPanel.add(scrollPane);
+			{
+				tableAsesor = new JTable(new DefaultTableModel());
+				tableAsesor.setFont(new Font("Tahoma", Font.BOLD, 11));
+				scrollPane.setViewportView(tableAsesor);
+			}
+		}
+		{
+			textFieldAsesor = new JTextField();
+			textFieldAsesor.setBounds(254, 48, 166, 20);
+			contentPanel.add(textFieldAsesor);
+			textFieldAsesor.setColumns(10);
+		}
+		{
+			JLabel lblIntroduceLaId = new JLabel("Introduce la ID del Asesor que deseas:");
+			lblIntroduceLaId.setBounds(10, 51, 297, 14);
+			contentPanel.add(lblIntroduceLaId);
+		}
+		{
+			JButton btnBuscarInmueblesAsociados = new JButton("Buscar");
+			btnBuscarInmueblesAsociados.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					
+					//Modelo por defecto que añadiremos a nuestra tabla.
+					DefaultTableModel model = (DefaultTableModel) tableAsesor.getModel();
+					
+					if (tableAsesor.getColumnCount()>0) {
+		                model.setColumnCount(0);
+		                model.setRowCount(0);
+		            }
+					
+					cargaAsesores();
+				}
+			});
+			btnBuscarInmueblesAsociados.setBounds(430, 47, 91, 23);
+			contentPanel.add(btnBuscarInmueblesAsociados);
+		}
+		{
+			JLabel lblTablaDeAsesores = new JLabel("Consultar Asesores");
+			lblTablaDeAsesores.setBounds(652, 11, 131, 14);
+			contentPanel.add(lblTablaDeAsesores);
+		}
+		{
+			JButton btnNewButton = new JButton("Asesores");
+			btnNewButton.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					ConsultarTodosAsesores cur = new ConsultarTodosAsesores(control);
+					cur.setModal(true);
+					cur.cargaTodosAsesores();
+					cur.setVisible(true);
+				}
+			});
+			btnNewButton.setBounds(662, 24, 89, 23);
+			contentPanel.add(btnNewButton);
+		}
+		{
+			JPanel buttonPane = new JPanel();
+			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
+			getContentPane().add(buttonPane, BorderLayout.SOUTH);
+			{
+				JButton cancelButton = new JButton("Volver");
+				cancelButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						//Cierra la ventana de muestra Asesores.
+						setVisible(false);
+					}
+				});
+				cancelButton.setActionCommand("Cancel");
+				buttonPane.add(cancelButton);
+			}
+		}
+	}
+
+
+	//Se invoca desde fuera de ésta clase.
+	public void cargaAsesores() {
+		try{
+			ArrayList<Inmueble> listaInmuebles = (ArrayList<Inmueble>) control.encontrarInmuebles();
+
+			//Asesor que usaremos para buscar sus Inmuebles.
+			String ase = textFieldAsesor.getText();
+
+			Asesor asesor = control.encontrarAsesorPorCod(ase);
+
+			//Modelo por defecto que añadiremos a nuestra tabla.
+			DefaultTableModel model = (DefaultTableModel) tableAsesor.getModel();
+
+			//Añadimos las columnas a la tabla.
+			model.addColumn("Codigo");
+			model.addColumn("Nombre");
+			model.addColumn("ID-Inmueble");
+			model.addColumn("Direccion");
+			model.addColumn("Localidad");
+			model.addColumn("Fecha de Alta");
+			model.addColumn("Superficie");
+			model.addColumn("Venta/Alquiler");
+
+
+			//Incluye solo los inmuebles asociados a ese Asesor.
+			for(int i=0; i<listaInmuebles.size(); i++) {
+
+
+				if(listaInmuebles.get(i).getAsesor().getCodigo_emp().trim().equals(ase)) {
+
+					Object nuevo[]= {asesor.getCodigo_emp(), asesor.getNombre(), listaInmuebles.get(i).getCod_Id(),
+							listaInmuebles.get(i).getCalle(), listaInmuebles.get(i).getLocalidad(), listaInmuebles.get(i).getFecha_alta(),
+							listaInmuebles.get(i).getSuperficie_total(), listaInmuebles.get(i).getVenta_alquiler(),
+					};
+
+					model.addRow(nuevo);
+
+				}  
+
+
+
+
+			}
+
+
+
+
+
+		}catch (Exception e){
+			JOptionPane.showMessageDialog(this,e.getMessage(),"ERROR AL MOSTRAR",JOptionPane.ERROR_MESSAGE);
+		}
+	}
+}//Fin de la clase ConsultarAsesoresPorInmueble
+

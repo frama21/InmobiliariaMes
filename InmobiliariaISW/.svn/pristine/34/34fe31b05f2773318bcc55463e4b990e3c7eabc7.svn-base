@@ -1,0 +1,36 @@
+package logica;
+
+public class NaveIndustrial extends Inmueble {
+
+	private String num_puertas;
+	private String calificacion;
+
+	public NaveIndustrial(String cod, String calle, String locali,
+			String fechalta, String suptot, String ventalqui, String num_puertas, String calificacion,Asesor ase, Cliente cli) {
+		
+		super(cod, calle, locali, fechalta, suptot, ventalqui,ase,cli);
+		
+		// TODO Auto-generated constructor stub
+		this.num_puertas = num_puertas;
+		this.calificacion= calificacion;
+	}
+
+	public void setNum_puertas(String num_puertas) {
+		this.num_puertas = num_puertas;
+	}
+	public String getNum_puertas() {
+		return num_puertas;
+	}
+	public void setCalificacion(String calificacion) {
+		this.calificacion = calificacion;
+	}
+	public String getCalificacion() {
+		return calificacion;
+	}
+
+	public String toString() {
+		return getNum_puertas();
+		
+	}
+	
+}

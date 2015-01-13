@@ -1,0 +1,25 @@
+package logica;
+
+public class Hipoteca {
+	private String cantidad_pendiente;
+	private String banco;
+
+	public Hipoteca (String cantidad_pendiente, String banco) {
+		this.cantidad_pendiente = cantidad_pendiente;
+		this.banco = banco;
+
+	}
+
+	public void setCantidad_pendiente(String cantidad_pendiente) {
+		this.cantidad_pendiente = cantidad_pendiente;
+	}
+	public String getCantidad_pendiente() {
+		return cantidad_pendiente;
+	}
+	public void setBanco(String banco) {
+		this.banco = banco;
+	}
+	public String getBanco() {
+		return banco;
+	}
+}//Fin de la clase.

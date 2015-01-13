@@ -1,0 +1,59 @@
+import static org.junit.Assert.*;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import logica.Asesor;
+import logica.Cliente;
+import logica.Controlador;
+import logica.Piso;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import excepciones.LogicaExcepcion;
+import presentacion.CrearPisoJDialog;
+
+
+public class CrearPisoJDialogTest_Bug533 {
+
+	String fechaAlta;
+	Date fecha;
+	Controlador controlador;
+	CrearPisoJDialog piso;
+	
+	
+	
+	 @Before
+	    public void inicializar() {
+		 	fechaAlta = "10/11/2015";
+		 	controlador = Controlador.dameControlador();
+		 	
+		 	piso = new CrearPisoJDialog(controlador);
+		 	piso.setFecha(fechaAlta);
+		 	piso.getContentPane().setVisible(false);
+	    }
+
+	@Test
+	public void testCrearPisoJDialog() {
+		try{
+	    	piso.botonCrear();
+	    	fail("El método debería de haber fallado");
+    	}
+    	catch(ParseException e){
+    		assertTrue(true);
+    	}
+		
+		
+		/*SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+		try{
+			fecha = formatter.parse(piso.getFecha_alta());			
+		}
+		catch(ParseException e){
+			fail("El formato de la fecha es incorrecto");
+		}*/
+		
+	}
+
+}

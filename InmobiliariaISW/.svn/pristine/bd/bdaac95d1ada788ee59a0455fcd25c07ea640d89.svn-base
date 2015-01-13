@@ -1,0 +1,302 @@
+package presentacion;
+
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JOptionPane;
+import javax.swing.JSeparator;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+import javax.swing.JComboBox;
+import logica.Controlador;
+import logica.Oferta;
+import logica.Transaccion;
+import logica.Visita;
+import javax.swing.JRadioButton;
+import excepciones.LogicaExcepcion;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.border.TitledBorder;
+import java.awt.Color;
+import javax.swing.ButtonGroup;
+
+public class NuevaTransaccion extends JDialog {
+
+	/**
+	 * Atributos de la clase y Variables.
+	 */
+	private static final long serialVersionUID = 1L;
+	private final JPanel contentPanel = new JPanel();
+	private JTextField textFieldAsesor;
+	private JTextField textFieldPrecio;
+	private JTextField textFieldFecha;
+	private static Controlador control;
+	private  JComboBox<Visita> comboBoxVisitas;
+	private JTextField textFieldCodigo;
+	private final ButtonGroup buttonGroup = new ButtonGroup();
+	private JButton buttonOK;
+	
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String... args) {
+		try {
+			NuevaTransaccion dialog = new NuevaTransaccion(control);
+			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+			dialog.setVisible(true);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void setCodAsesor(String cod){
+		textFieldCodigo.setText(cod);
+		}	
+	
+	public void botonOk(){
+		buttonOK.doClick();
+		}	
+	public int getNumItems(){
+		return comboBoxVisitas.getItemCount();
+		}
+
+	//Inicializacion de los objetos necesarios de la capa de negocio
+	private void initDominio() {
+		try{
+			control = Controlador.dameControlador();
+		}catch (Exception e){
+			System.err.println(e.getMessage());
+		}
+	}
+
+
+	/**
+	 * Create the dialog.
+	 */
+	public NuevaTransaccion(Controlador control1) {
+
+		//Inicializamos el controlador para poder trabajar entre presentacion,lógica y persistencia.
+		initDominio();
+
+		setBounds(100, 100, 450, 300);
+		setTitle("Nueva Transacción");
+		getContentPane().setLayout(new BorderLayout());
+		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
+		getContentPane().add(contentPanel, BorderLayout.CENTER);
+		contentPanel.setLayout(null);
+
+		JSeparator separator = new JSeparator();
+		separator.setBounds(0, 60, 434, 2);
+		contentPanel.add(separator);
+
+		buttonOK = new JButton("OK");
+		buttonOK.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+
+				//Cuando pongamos la id del asesor apareceran sus visitas asociadas.
+				String ase = textFieldAsesor.getText();
+				
+				//Cada vez que pulsas ok se borrarán todos los datos cargados en el combobox.
+				comboBoxVisitas.removeAllItems();
+
+				try{
+					//Lista con todas las visitas de la base de datos.
+					java.util.List<Visita> visitas = control.encontrarVisitas();
+
+					//Lista con todas las ofertas de la base de datos.
+					java.util.List<Oferta> ofertas = control.encontrarOfertas();
+					
+					for(int a=0; a<visitas.size(); a++) {
+						for(int b = 0; b<ofertas.size(); b++) {
+							
+							//Si la oferta corresponde a esa visita se añade.
+							if(visitas.get(a).getCod().equals(ofertas.get(b).getVisita().getCod()))
+								visitas.get(a).setOferta(ofertas.get(b));
+							
+						}//Fin del for b
+					}//Fin del for a
+					
+					
+					//Incluye solo las visitas asociadas a ese Asesor (con el mismo id de asesor).
+					for(int i=0; i<visitas.size(); i++) {
+						
+						
+						//Si la visita es de ese asesor y ademas tiene una oferta asociada aparecerá.
+						if(visitas.get(i).getAsesor().getCodigoEmp().trim().equals(ase) && visitas.get(i).getOferta()!=null) {
+
+
+							comboBoxVisitas.addItem(visitas.get(i));
+						}
+
+
+					}//Fin primer for.
+
+				} catch (LogicaExcepcion e2) {
+					e2.printStackTrace();
+				}
+			}
+
+		});
+		buttonOK.setActionCommand("OK");
+		buttonOK.setBounds(254, 26, 57, 23);
+		contentPanel.add(buttonOK);
+
+		textFieldAsesor = new JTextField();
+		textFieldAsesor.setColumns(10);
+		textFieldAsesor.setBounds(105, 27, 139, 20);
+		contentPanel.add(textFieldAsesor);
+
+		JLabel label = new JLabel("Introduce el C\u00F3digo del Asesor:");
+		label.setBounds(105, 11, 176, 14);
+		contentPanel.add(label);
+
+		comboBoxVisitas = new JComboBox<Visita>();
+		comboBoxVisitas.setBounds(81, 73, 163, 17);
+		contentPanel.add(comboBoxVisitas);
+
+		JLabel visitasLabel = new JLabel("Visitas:");
+		visitasLabel.setBounds(10, 74, 46, 14);
+		contentPanel.add(visitasLabel);
+
+		textFieldPrecio = new JTextField();
+		textFieldPrecio.setColumns(10);
+		textFieldPrecio.setBounds(81, 101, 139, 20);
+		contentPanel.add(textFieldPrecio);
+
+		textFieldFecha = new JTextField();
+		textFieldFecha.setColumns(10);
+		textFieldFecha.setBounds(81, 132, 139, 20);
+		contentPanel.add(textFieldFecha);
+
+		JLabel fechaLabel = new JLabel("Fecha:");
+		fechaLabel.setBounds(10, 135, 46, 14);
+		contentPanel.add(fechaLabel);
+
+		JLabel lblPrecio = new JLabel("Precio:");
+		lblPrecio.setBounds(10, 104, 46, 14);
+		contentPanel.add(lblPrecio);
+
+		JLabel visitasAsesorLabel = new JLabel("Visitas asociadas al Asesor.");
+		visitasAsesorLabel.setBounds(257, 74, 167, 14);
+		contentPanel.add(visitasAsesorLabel);
+
+		JPanel panel = new JPanel();
+		panel.setBorder(new TitledBorder(null, "Opciones", TitledBorder.LEADING, TitledBorder.TOP, null, Color.BLUE));
+		panel.setBounds(254, 146, 139, 76);
+		contentPanel.add(panel);
+		panel.setLayout(null);
+		
+				final JRadioButton rdbtnVenta = new JRadioButton("Venta");
+				buttonGroup.add(rdbtnVenta);
+				rdbtnVenta.setBounds(6, 46, 109, 23);
+				panel.add(rdbtnVenta);
+				
+						JRadioButton rdbtnAlquiler = new JRadioButton("Alquiler");
+						buttonGroup.add(rdbtnAlquiler);
+						rdbtnAlquiler.setBounds(6, 20, 109, 23);
+						panel.add(rdbtnAlquiler);
+
+		textFieldCodigo = new JTextField();
+		textFieldCodigo.setBounds(81, 163, 139, 20);
+		contentPanel.add(textFieldCodigo);
+		textFieldCodigo.setColumns(10);
+
+		JLabel lblCdigo = new JLabel("C\u00F3digo:");
+		lblCdigo.setBounds(10, 166, 46, 14);
+		contentPanel.add(lblCdigo);
+		{
+			JPanel buttonPane = new JPanel();
+			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
+			getContentPane().add(buttonPane, BorderLayout.SOUTH);
+			{
+				JButton okButton = new JButton("Crear");
+				okButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+
+						Visita visi = (Visita)comboBoxVisitas.getSelectedItem();
+						Oferta ofe = null;
+
+						try {
+							ofe = control.encontrarOfertaPorCod(visi.getOferta().getCod());
+						} catch (LogicaExcepcion e2) {
+							// TODO Auto-generated catch block
+							e2.printStackTrace();
+						}
+
+
+						//Se creará la Transacción en la base de datos
+						String va;
+						//Para poner si es venta o alquiler.
+						if (rdbtnVenta.isSelected()) va = "V";
+						else va="A";
+						
+						Transaccion vi = new Transaccion (textFieldCodigo.getText(),
+								textFieldPrecio.getText(), 
+								textFieldFecha.getText(),
+								va,
+								ofe);
+
+
+						try{
+
+							//Antes de crearse la Transaccion pregunta si estamos seguros o no.
+							Object[] textoOpciones = {"Si Quiero", "Ahora no"};
+
+							int opcion = JOptionPane.showOptionDialog(null,"¿ Desea realizar la operacion ahora ?",
+									"Mensaje de confirmacion",
+									JOptionPane.YES_NO_CANCEL_OPTION,
+									JOptionPane.QUESTION_MESSAGE,
+									null, //utilizar el icono predeterminado
+									textoOpciones,
+									textoOpciones[0]); //boton predeterminado
+
+							//Si el boton elegido es "Si quiero" (posicion 0 del array) lo crea.
+							if(opcion==0) {
+
+								//Si la compra/alquiler coincide con el propuesto en el inmueble, se crea.
+								if(visi.getInm().getVentaAlquiler().trim().equals(vi.getCompraAlquiler().trim())) {
+									
+								
+									control.crearTransaccion(vi);
+
+
+									JOptionPane.showMessageDialog(null, "Transaccion Creada Correctamente","TRANSACCION",
+											JOptionPane.DEFAULT_OPTION);
+								}//Fin del if de las ventas y alquileres.
+
+								//Si el Inmueble se puso en la pagina para ser alquilado y la Transaccion es de una venta, dará error.
+								else if (visi.getInm().getVentaAlquiler().trim().equals("V")){JOptionPane.showMessageDialog(null, "Ese Inmueble no puede ser Alquilado,\n solo Vendido", "TRANSACCION",
+										JOptionPane.DEFAULT_OPTION); 
+
+								} else { JOptionPane.showMessageDialog(null, "Ese Inmueble no puede ser Vendido,\n solo alquilado", "TRANSACCION", 
+										JOptionPane.DEFAULT_OPTION);}
+							}//Fin de opcion == 0
+
+						} catch(Exception e1){
+							JOptionPane.showMessageDialog(null, e1.getMessage(),"ERROR AL CREAR",
+									JOptionPane.ERROR_MESSAGE);
+						}
+					}
+				});
+				okButton.setActionCommand("OK");
+				buttonPane.add(okButton);
+				getRootPane().setDefaultButton(okButton);
+			}
+			{
+				JButton cancelButton = new JButton("Cancel");
+				cancelButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						//Cierra la ventana de crear asesor.
+						setVisible(false);
+					}
+				});
+				cancelButton.setActionCommand("Cancel");
+				buttonPane.add(cancelButton);
+			}
+		}
+	}
+}//Fin de la clase.

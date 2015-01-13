@@ -1,0 +1,54 @@
+package logica;
+
+
+public class Piso extends Inmueble{
+
+	private String num_habitaciones;
+	private PlazaGaraje plazasGaraje;
+	private CasaPueblo casapueblo;
+	
+
+	public Piso(String cod, String calle, String locali, String fechalta,
+			String suptot, String ventalqui, String num_habita ,Asesor ase , Cliente cli) {
+		super(cod, calle, locali, fechalta, suptot, ventalqui,ase,cli);
+
+		this.num_habitaciones = num_habita;
+		// TODO Auto-generated constructor stub
+	}
+
+
+
+
+	public void setNum_habitaciones(String num_habitaciones) {
+		this.num_habitaciones = num_habitaciones;
+	}
+
+	public String getNum_habitaciones() {
+		return num_habitaciones;
+	}
+	public void setGaraje(PlazaGaraje plazagaraje) {
+		this.plazasGaraje = plazagaraje;
+	}
+
+	public PlazaGaraje getGaraje() {
+		return plazasGaraje;
+	}
+
+
+	public CasaPueblo getCasapueblo() {
+		return casapueblo;
+	}
+
+
+	public void setCasapueblo(CasaPueblo casapueblo) {
+		this.casapueblo = casapueblo;
+	}
+	
+	
+	
+
+
+
+	
+
+}//Fin de la clase

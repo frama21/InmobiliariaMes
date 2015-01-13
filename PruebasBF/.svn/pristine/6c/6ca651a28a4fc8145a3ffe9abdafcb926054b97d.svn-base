@@ -1,0 +1,92 @@
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+
+import logica.Asesor;
+import logica.Cliente;
+import logica.Controlador;
+import logica.Piso;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import persistencia.ConnectionManager;
+import presentacion.CrearPisoJDialog;
+import excepciones.DAOExcepcion;
+import excepciones.LogicaExcepcion;
+
+/**
+ * @author Pau Alario
+ * 
+ * Crear Piso campo superficie total
+ */
+
+public class CrearPisoJDialogTest_Bug531 {
+	String supTotal;
+	Controlador controlador;
+	CrearPisoJDialog piso;
+	Cliente cli;
+	Asesor ase;
+	Piso pi;
+	
+	 @Before
+	    public void inicializar() {
+		 	controlador = Controlador.dameControlador();
+		 	piso = new CrearPisoJDialog(controlador);
+		 	supTotal = "-1";
+		 	
+		 	cli = new Cliente("125", "Juan","ape");
+	    	ase = new Asesor("12356", "Asesor 12");
+            
+            pi = new Piso("12","calle","localidaddd", "1/1/2311", supTotal, "V", "2", ase,cli);
+		 	
+	    }
+
+	@Test
+	public void testCrearPisoJDialog() {
+		
+		try{
+			controlador.crearAsesor(ase);
+			controlador.crearCliente(cli);
+
+			piso.setCampos("12","calle","localidaddd", "1/1/2311", supTotal, "V", "2");
+			piso.setOpVenta(true);
+			
+	    	fail("El método debería de haber fallado");
+    	}
+    	catch(LogicaExcepcion e){
+    		assertTrue(true);
+    	}
+		/*try{
+			superficie = Integer.parseInt(piso.getSuperficie_total());
+			assertTrue("El número no es positivo", superficie>=0);
+		}
+		catch(NumberFormatException e){
+			fail("Debes de introducir un valor numérico");
+		}*/
+		
+	}
+	
+	@After
+    public void after(){
+    	try{
+    		ConnectionManager connManager = new ConnectionManager("practicaFinal");
+            connManager.connect();
+            
+            connManager.updateDB("delete from PISO where COD_ID='" + pi.getCod_Id() + "'");
+            connManager.updateDB("delete from INMUEBLE where COD_ID='" + pi.getCod_Id() + "'");
+            connManager.updateDB("delete from ASESOR where CODIGO_EMPLEADO='" + ase.getCodigo_emp()+ "'");
+            connManager.updateDB("delete from CLIENTE where NIF_CLIENTE='" + cli.getNif() + "'");
+            
+            connManager.close();
+    	}
+    	catch (ClassNotFoundException ex) {
+            ex.printStackTrace();
+        }
+    	
+    	catch(DAOExcepcion ex){
+    		ex.printStackTrace();    		
+    	}
+    }
+
+}

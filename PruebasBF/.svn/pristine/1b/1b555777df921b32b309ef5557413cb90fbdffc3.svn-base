@@ -1,0 +1,84 @@
+
+import excepciones.DAOExcepcion;
+import logica.Asesor;
+import logica.Cliente;
+import logica.Controlador;
+import logica.Inmueble;
+import logica.Visita;
+
+import persistencia.ConnectionManager;
+import excepciones.LogicaExcepcion;
+import org.junit.After;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.fail;
+import org.junit.Before;
+import org.junit.Test;
+
+/**
+ * Este test NO sirve ya que el bug no existe, pero para hacernos una idea...
+ * @author joseph
+ */
+public class Prueba {
+
+    Controlador controlador;
+    Inmueble inmueble;
+    Asesor asesor;
+    Cliente cliente;
+    Visita visita;
+    ConnectionManager conexion;
+
+    @Before
+    public void inicializar() {
+        controlador = Controlador.dameControlador();
+        
+        try{
+            cliente = new Cliente("12345678A", "Antonio", "Manostijeras");
+            controlador.crearCliente(cliente);
+            asesor = new Asesor("0001", "Paquito");
+            controlador.crearAsesor(asesor);
+            inmueble = new Inmueble("1111", "Calle falsa", "localidad falsa", "1/1/1980", "80m2", "venta", asesor, cliente);
+            controlador.crearInmueble(inmueble);
+            // Declaramos una instancia de la clase que vamos a testear.
+            visita = new Visita("1234", "1/1/1970", inmueble, asesor, cliente);
+        }
+        catch (LogicaExcepcion ex){
+            ex.printStackTrace();
+        }
+    }
+
+    /* Este test NO sirve ya que el bug no existe, pero para hacernos una idea... */
+    @Test
+    public void test() {
+        try {
+            controlador.crearVisita(visita);
+        } catch (LogicaExcepcion ex) {
+            fail(ex.getMessage());
+        }
+
+        try {
+            assertNotNull("Visita no encotrada", controlador.encontrarVisitaPorCod("1234"));
+        } catch (LogicaExcepcion ex2) {
+            fail(ex2.getMessage());
+        }
+    }
+    
+    @After
+    public void eliminar(){
+        try{
+            ConnectionManager connManager = new ConnectionManager("practicaFinal");
+            connManager.connect();
+            
+            connManager.updateDB("delete from visita where cod_visita='" + visita.getCod() + "'");
+            connManager.updateDB("delete from inmueble where cod_id='" + inmueble.getCodId() + "'");
+            connManager.updateDB("delete from asesor where codigo_empleado='" + asesor.getCodigoEmp() + "'");
+            connManager.updateDB("delete from cliente where nif_cliente='" + cliente.getNif() + "'");
+            
+            connManager.close();
+        } catch (ClassNotFoundException ex) {
+            ex.printStackTrace();
+        }
+        catch(DAOExcepcion ex2){
+            ex2.printStackTrace();
+        }
+    }
+}

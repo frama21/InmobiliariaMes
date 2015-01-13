@@ -1,0 +1,394 @@
+package presentacion;
+
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.JTable;
+import javax.swing.JScrollPane;
+
+import logica.Controlador;
+import logica.Inmueble;
+import logica.NaveIndustrial;
+import logica.Oferta;
+import logica.Piso;
+import logica.Transaccion;
+import logica.Visita;
+
+import javax.swing.ScrollPaneConstants;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Color;
+import java.awt.Font;
+
+import javax.swing.JLabel;
+
+public class ConsultarInmueblesNo extends JDialog {
+
+	/**
+	 * Variables de la clase.
+	 */
+	private static final long serialVersionUID = 1L;
+	private final JPanel contentPanel = new JPanel();
+	private static Controlador control;
+	private JTable navesTable;
+	private JTable pisosTable;
+	int h;
+	boolean parar = false;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String... args) {
+		try {
+			ConsultaPisosJDialog dialog = new ConsultaPisosJDialog(control);
+			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+			dialog.setVisible(true);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	// Inicialización de los objetos necesarios de la capa de negocio
+	private void initDominio() {
+		try {
+			control = Controlador.dameControlador();
+		} catch (Exception e) {
+			Logger log = Logger.getLogger(ConsultarInmueblesNo.class.getName());
+        	if (log.isLoggable(Level.FINE))
+        		log.fine(e.getMessage());
+		}
+	}
+
+	/**
+	 * Create the dialog.
+	 */
+	public ConsultarInmueblesNo(Controlador control1) {
+		setBackground(new Color(255, 255, 255));
+
+		// Método que inicializa el controlador.
+		initDominio();
+
+		setBounds(100, 100, 900, 900);
+		getContentPane().setLayout(new BorderLayout());
+		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
+		getContentPane().add(contentPanel, BorderLayout.CENTER);
+		setTitle("Consultar Visitas y Ofertas");
+		contentPanel.setLayout(null);
+		{
+			JScrollPane scrollPane = new JScrollPane();
+			scrollPane.setLocation(10, 400);
+			scrollPane
+					.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+			scrollPane
+					.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+
+			scrollPane.setSize(864, 286);
+
+			contentPanel.add(scrollPane);
+			{
+				navesTable = new JTable(new DefaultTableModel());
+				navesTable.setFont(new Font("Tahoma", Font.BOLD, 12));
+				navesTable.setBackground(Color.WHITE);
+				scrollPane.setViewportView(navesTable);
+			}
+		}
+		{
+			JScrollPane scrollPane = new JScrollPane();
+			scrollPane
+					.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+			scrollPane
+					.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+			scrollPane.setBounds(10, 82, 864, 264);
+			contentPanel.add(scrollPane);
+
+			pisosTable = new JTable(new DefaultTableModel());
+			pisosTable.setFont(new Font("Tahoma", Font.BOLD, 12));
+			pisosTable.setBackground(Color.WHITE);
+			scrollPane.setViewportView(pisosTable);
+		}
+
+		JLabel listaPisosLabel = new JLabel(
+				"LISTADO DE PISOS SIN VENDER NI ALQUILAR");
+		listaPisosLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
+		listaPisosLabel.setBounds(256, 38, 467, 14);
+		contentPanel.add(listaPisosLabel);
+
+		JLabel listaNavesLabel = new JLabel(
+				"LISTADO DE NAVESINDUSTRIALES SIN VENDER NI ALQUILAR");
+		listaNavesLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
+		listaNavesLabel.setBounds(218, 362, 467, 14);
+		contentPanel.add(listaNavesLabel);
+		{
+			JPanel buttonPanel = new JPanel();
+			buttonPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
+			getContentPane().add(buttonPanel, BorderLayout.SOUTH);
+			{
+				JButton cancelButton = new JButton("Volver");
+				cancelButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						// Cierra la ventana de
+						// ConsultarPisosNoVendidos/Alquilados.
+						setVisible(false);
+					}
+				});
+				cancelButton.setActionCommand("Cancel");
+				buttonPanel.add(cancelButton);
+			}
+		}
+	}
+
+	// Se invoca desde fuera de ésta clase.
+	public void cargaPisos() {
+		try {
+			// Array con todos los inmuebles de la base de datos.
+			ArrayList<Inmueble> listaInmuebles = (ArrayList<Inmueble>) control
+					.encontrarInmuebles();
+
+			// Array con todos los pisos de la base de datos.
+			ArrayList<Piso> listaPisos = (ArrayList<Piso>) control
+					.encontrarPisos();
+
+			ArrayList<Oferta> listaOfertas = (ArrayList<Oferta>) control
+					.encontrarOfertas();
+
+			// Array con todas las visitas de la base de datos.
+			ArrayList<Visita> listaVisitas = (ArrayList<Visita>) control
+					.encontrarVisitas();
+
+			// Modelo por defecto que añadiremos a nuestra tabla.
+			DefaultTableModel model = (DefaultTableModel) pisosTable.getModel();
+
+			// Añadimos las columnas a la tabla.
+			model.addColumn("Codigo");
+			model.addColumn("Direccion");
+			model.addColumn("Localidad");
+			model.addColumn("Fecha de Alta");
+			model.addColumn("Superficie");
+			model.addColumn("Venta/Alquiler");
+			model.addColumn("Propietario");
+			model.addColumn("Asesor");
+
+			// Lista con todas las ofertas de la base de datos.
+			java.util.List<Oferta> ofertas = control.encontrarOfertas();
+
+			for (int a = 0; a < listaVisitas.size(); a++) {
+				for (int b = 0; b < ofertas.size(); b++) {
+
+					// Si la oferta corresponde a esa visita se añade.
+					if (listaVisitas.get(a).getCod()
+							.equals(ofertas.get(b).getVisita().getCod()))
+						listaVisitas.get(a).setOferta(ofertas.get(b));
+
+				}// Fin del for b
+			}// Fin del for a
+
+			// Lista con todas las transacciones de la base de datos.
+			java.util.List<Transaccion> transacciones = control
+					.encontrarTransaccion();
+
+			for (int e = 0; e < ofertas.size(); e++) {
+				for (int r = 0; r < transacciones.size(); r++) {
+					// Se añaden transacciones a las ofertas si las hay.
+					if (ofertas.get(e).getCod()
+							.equals(transacciones.get(r).getOferta().getCod()))
+						ofertas.get(e).setTransaccion(transacciones.get(r));
+				}
+			}
+
+			// Incluye los pisos sin Visitas/Ofertas. (Es muy costoso, habría
+			// que hacerlo con algún método de reducir busquedas a la mitad
+			// etc).
+			for (int i = 0; i < listaInmuebles.size(); i++) {
+				for (int j = 0; j < listaPisos.size(); j++) {
+
+					parar = false;
+					// Inmuebles con sus pisos.
+					if (listaInmuebles.get(i).getCodId().trim()
+							.equals(listaPisos.get(j).getCodId().trim())) {
+
+						// Se crea un objeto con los valores del piso.
+						Object nuevo[] = { listaInmuebles.get(i).getCodId(),
+								listaInmuebles.get(i).getCalle(),
+								listaInmuebles.get(i).getLocalidad(),
+								listaInmuebles.get(i).getFechaAlta(),
+								listaInmuebles.get(i).getSuperficieTotal(),
+								listaInmuebles.get(i).getVentaAlquiler(),
+								listaInmuebles.get(i).getCliente(),
+								listaInmuebles.get(i).getAsesor() };
+
+						// For para la lista de visitas.
+						for (int h = 0; h < listaVisitas.size(); h++) {
+							// for(int o = 0; h<listaOfertas.size(); o++) {
+							if (parar == false) {
+								// Si esa visita esta asociada a un inmueble y
+								// ese inmueble tiene una oferta.
+								if (listaInmuebles
+										.get(i)
+										.getCodId()
+										.trim()
+										.equals(listaVisitas.get(h).getInm()
+												.getCodId().trim())
+										&& listaVisitas.get(h).getOferta() != null) {
+									parar = true;
+									// Si ese inmueble no tiene transaccion
+									// saldrá, sinos no sale.
+									if (listaVisitas.get(h).getOferta()
+											.getTransaccion() == null) {
+
+										parar = false;
+									}
+									// Si los inmuebles no tiene visitas
+									// saldrán.
+								} else if (parar == false
+										&& h == listaVisitas.size() - 1) {
+									model.addRow(nuevo);
+								}
+							}
+						}
+						// }
+					}
+
+				}// Fin del for de las j.
+
+			}// Fin del for de las i.
+
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(this, e.getMessage(),
+					"ERROR AL MOSTRAR", JOptionPane.ERROR_MESSAGE);
+		}
+	}
+
+	// Se invoca desde fuera de ésta clase.
+	public void cargaNavesIndustriales() {
+		try {
+			// Array con todos los inmuebles de la base de datos.
+			ArrayList<Inmueble> listaInmuebles = (ArrayList<Inmueble>) control
+					.encontrarInmuebles();
+
+			// Array con todos los pisos de la base de datos.
+			ArrayList<NaveIndustrial> listaNaves = (ArrayList<NaveIndustrial>) control
+					.encontrarNaveIndustrial();
+
+			ArrayList<Oferta> listaOfertas = (ArrayList<Oferta>) control
+					.encontrarOfertas();
+
+			// Array con todas las visitas de la base de datos.
+			ArrayList<Visita> listaVisitas = (ArrayList<Visita>) control
+					.encontrarVisitas();
+
+			// Modelo por defecto que añadiremos a nuestra tabla.
+			DefaultTableModel model = (DefaultTableModel) navesTable.getModel();
+
+			// Añadimos las columnas a la tabla.
+			model.addColumn("Codigo");
+			model.addColumn("Direccion");
+			model.addColumn("Localidad");
+			model.addColumn("Fecha de Alta");
+			model.addColumn("Superficie");
+			model.addColumn("Venta/Alquiler");
+			model.addColumn("Propietario");
+			model.addColumn("Asesor");
+
+			// Lista con todas las ofertas de la base de datos.
+			java.util.List<Oferta> ofertas = control.encontrarOfertas();
+
+			for (int a = 0; a < listaVisitas.size(); a++) {
+				for (int b = 0; b < ofertas.size(); b++) {
+
+					// Si la oferta corresponde a esa visita se añade.
+					if (listaVisitas.get(a).getCod()
+							.equals(ofertas.get(b).getVisita().getCod()))
+						listaVisitas.get(a).setOferta(ofertas.get(b));
+
+				}// Fin del for b
+			}// Fin del for a
+
+			// Lista con todas las transacciones de la base de datos.
+			java.util.List<Transaccion> transacciones = control
+					.encontrarTransaccion();
+
+			for (int e = 0; e < ofertas.size(); e++) {
+				for (int r = 0; r < transacciones.size(); r++) {
+					// Se añaden transacciones a las ofertas si las hay.
+					if (ofertas.get(e).getCod()
+							.equals(transacciones.get(r).getOferta().getCod()))
+						ofertas.get(e).setTransaccion(transacciones.get(r));
+				}
+			}
+
+			// Incluye los pisos sin Visitas/Ofertas. (Es muy costoso, habría
+			// que hacerlo con algún método de reducir busquedas a la mitad
+			// etc).
+			for (int i = 0; i < listaInmuebles.size(); i++) {
+				for (int j = 0; j < listaNaves.size(); j++) {
+
+					parar = false;
+					// Inmuebles con sus pisos.
+					if (listaInmuebles.get(i).getCodId().trim()
+							.equals(listaNaves.get(j).getCodId().trim())) {
+
+						// Se crea un objeto con los valores del piso.
+						Object nuevo[] = { listaInmuebles.get(i).getCodId(),
+								listaInmuebles.get(i).getCalle(),
+								listaInmuebles.get(i).getLocalidad(),
+								listaInmuebles.get(i).getFechaAlta(),
+								listaInmuebles.get(i).getSuperficieTotal(),
+								listaInmuebles.get(i).getVentaAlquiler(),
+								listaInmuebles.get(i).getCliente(),
+								listaInmuebles.get(i).getAsesor() };
+
+						// For para la lista de visitas.
+						for (int h = 0; h < listaVisitas.size(); h++) {
+							// for(int o = 0; h<listaOfertas.size(); o++) {
+							if (parar == false) {
+								// Si esa visita esta asociada a un inmueble y
+								// ese inmueble tiene una oferta.
+								if (listaInmuebles
+										.get(i)
+										.getCodId()
+										.trim()
+										.equals(listaVisitas.get(h).getInm()
+												.getCodId().trim())
+										&& listaVisitas.get(h).getOferta() != null) {
+									parar = true;
+									// Si ese inmueble no tiene transaccion
+									// saldrá, sinos no sale.
+									if (listaVisitas.get(h).getOferta()
+											.getTransaccion() == null) {
+
+										parar = false;
+									}
+									// Si los inmuebles no tiene visitas
+									// saldrán.
+								} else if (parar == false
+										&& h == listaVisitas.size() - 1) {
+									model.addRow(nuevo);
+								}
+							}
+						}
+						// }
+					}
+
+				}// Fin del for de las j.
+
+			}// Fin del for de las i.
+
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(this, e.getMessage(),
+					"ERROR AL MOSTRAR", JOptionPane.ERROR_MESSAGE);
+		}
+
+	}// Fin de las ofertas.
+
+}// Fin de la clase ConsultaInmueblesJDialog.
+

@@ -1,0 +1,91 @@
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import excepciones.DAOExcepcion;
+import excepciones.LogicaExcepcion;
+import logica.Asesor;
+import logica.Cliente;
+import logica.Controlador;
+import logica.Inmueble;
+import logica.Visita;
+import persistencia.ConnectionManager;
+import presentacion.NuevaTransaccion;
+
+
+
+/**
+ * @author Pau Alario
+ */
+
+public class NuevaTransaccionTest_Bug583 {
+	Controlador controlador;
+    ConnectionManager conexion;
+    String codas,codcli1,codcli2,codin,codvis;
+    NuevaTransaccion trans;
+	
+
+    @Before
+    public void inicializar() {
+    	controlador = Controlador.dameControlador();
+    	
+        codas = "1";
+        codcli1 = "1234";
+        codcli2 = "5678";
+        codin = "10";
+        codvis = "100";
+        
+        Asesor as = new Asesor(codas,"Pepito");
+        Cliente cli = new Cliente(codcli1,"Paco","Perez");
+        Cliente cli2 = new Cliente(codcli2,"Pepe","Pelayo");
+        Inmueble in = new Inmueble(codin,"Tarongers","Valencia","123","123","venta",as,cli);
+        Visita vis = new Visita(codvis,"321",in,as,cli2);
+        try{
+	        controlador.crearAsesor(as);
+	        controlador.crearCliente(cli);
+	        controlador.crearCliente(cli2);
+	        controlador.crearInmueble(in);
+	        controlador.crearVisita(vis);
+        }catch(LogicaExcepcion e){}
+        
+        
+        trans = new NuevaTransaccion(controlador);
+    }
+    
+    
+    
+    @Test
+    public void test() {
+    	trans.setCodAsesor(codas);
+		trans.botonOk();
+    	
+    	int n = trans.getNumItems();
+    	assertTrue("No se lista ninguna visita para el asesor introducido",n>0);
+    }
+    
+    @After
+    public void after(){
+    	try{
+    		ConnectionManager connManager = new ConnectionManager("practicaFinal");
+            connManager.connect();
+            
+            connManager.updateDB("delete from asesor where CODIGO_EMPLEADO='" + codas + "'");
+            connManager.updateDB("delete from cliente where nif_cliente='" + codcli1 + "'");
+            connManager.updateDB("delete from cliente where nif_cliente='" + codcli2 + "'");
+            connManager.updateDB("delete from inmueble where CODIGO_ID='" + codin + "'");
+            connManager.updateDB("delete from visita where cod_visita='" + codvis + "'");
+            
+            connManager.close();
+    	}
+    	catch (ClassNotFoundException ex) {
+            ex.printStackTrace();
+        }
+    	
+    	catch(DAOExcepcion ex){
+    		ex.printStackTrace();    		
+    	}
+    }
+
+}

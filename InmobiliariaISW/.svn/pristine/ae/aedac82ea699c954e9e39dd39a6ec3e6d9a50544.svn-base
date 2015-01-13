@@ -1,0 +1,41 @@
+package logica;
+
+public class Interesado {
+	
+	private String preciomaximo_compra;
+	private String preciomaximo_alquiler;
+	private ZonaGeografica zonaGeografica;
+	private Cliente cliente;
+	
+	public Interesado (String preciomaximo_compra, String preciomaximo_alquiler){
+		this.preciomaximo_compra = preciomaximo_compra;
+		this.preciomaximo_alquiler = preciomaximo_alquiler;
+	}
+	
+	public void setPreciomaximo_compra(String preciomaximo_compra) {
+		this.preciomaximo_compra = preciomaximo_compra;
+	}
+	public String getPreciomaximo_compra() {
+		return preciomaximo_compra;
+	}
+	public void setPreciomaximo_alquiler(String preciomaximo_alquiler) {
+		this.preciomaximo_alquiler = preciomaximo_alquiler;
+	}
+	public String getPreciomaximo_alquiler() {
+		return preciomaximo_alquiler;
+	}
+	
+	public void setZonaGeografica(ZonaGeografica zonaGeografica) {
+		this.zonaGeografica = zonaGeografica;
+	}
+	public ZonaGeografica getZonaGeografica() {
+		return zonaGeografica;
+	}
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+}//Fin de la clase.

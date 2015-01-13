@@ -1,0 +1,89 @@
+import static org.junit.Assert.*;
+
+
+import logica.Asesor;
+import logica.Cliente;
+import logica.Controlador;
+import logica.Piso;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import excepciones.DAOExcepcion;
+import excepciones.LogicaExcepcion;
+import persistencia.ConnectionManager;
+
+
+/**
+ * @author Fran Martí
+ * 
+ * Crear Piso formato fecha
+ */
+public class CrearPisoJDialogTest_Bug533 {
+
+	String fechaAlta;
+	Controlador controlador;
+	Cliente cli;
+	Asesor ase;
+	Piso pi;
+	
+	
+	
+	 @Before
+	    public void inicializar() {
+		 	fechaAlta = "hoy";
+		 	controlador = Controlador.dameControlador();
+		 	
+		 	cli = new Cliente("125", "Juan","ape");
+	    	ase = new Asesor("12356", "Asesor 12");
+            
+            pi = new Piso("12","calle","localidaddd", fechaAlta, "200", "V", "2", ase,cli);
+	    }
+
+	@Test
+	public void testCrearPisoJDialog() {
+		try{
+			controlador.crearAsesor(ase);
+			controlador.crearCliente(cli);
+			controlador.crearPiso(pi);
+	    	fail("El método debería de haber fallado");
+    	}
+    	catch(LogicaExcepcion e){
+    		assertTrue(true);
+    	}
+		
+		
+		/*SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+		try{
+			fecha = formatter.parse(piso.getFecha_alta());			
+		}
+		catch(ParseException e){
+			fail("El formato de la fecha es incorrecto");
+		}*/
+		
+	}
+	
+	@After
+    public void after(){
+    	try{
+    		ConnectionManager connManager = new ConnectionManager("practicaFinal");
+            connManager.connect();
+            
+            connManager.updateDB("delete from PISO where COD_ID='" + pi.getCodId() + "'");
+            connManager.updateDB("delete from INMUEBLE where COD_ID='" + pi.getCodId() + "'");
+            connManager.updateDB("delete from ASESOR where CODIGO_EMPLEADO='" + ase.getCodigoEmp()+ "'");
+            connManager.updateDB("delete from CLIENTE where NIF_CLIENTE='" + cli.getNif() + "'");
+            
+            connManager.close();
+    	}
+    	catch (ClassNotFoundException ex) {
+            ex.printStackTrace();
+        }
+    	
+    	catch(DAOExcepcion ex){
+    		ex.printStackTrace();    		
+    	}
+    }
+
+}

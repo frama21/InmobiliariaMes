@@ -1,0 +1,64 @@
+import static org.junit.Assert.*;
+import logica.Asesor;
+import logica.Cliente;
+import logica.Controlador;
+import logica.NaveIndustrial;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import persistencia.ConnectionManager;
+import presentacion.CrearNaveIndustrial;
+import excepciones.DAOExcepcion;
+import excepciones.LogicaExcepcion;
+
+/**
+ * @author Fran Martí
+ * 
+ * Radio butons de Venta/Alquiler
+ */
+public class CrearNaveIndustrialTest_Bug556 {
+
+	NaveIndustrial nv;
+    Controlador controlador;
+    Cliente cli;
+    Asesor ase;
+    CrearNaveIndustrial nave;
+    
+    @Before
+    public void inicializar() {
+    	controlador = Controlador.dameControlador();
+    	
+    	nave = new CrearNaveIndustrial(controlador);
+    	nave.getContentPane().setVisible(false);
+    }
+
+	@Test
+	public void testCrearNaveIndustrial() {
+		
+		nave.botonOk();
+		assertFalse("No se ha seleccionado ninguna opcion de venta ni alquiler",nave.selected());
+	}
+	
+	@After
+    public void after(){
+    	try{
+    		ConnectionManager connManager = new ConnectionManager("practicaFinal");
+            connManager.connect();
+            
+            connManager.updateDB("delete from NAVEINDUSTRIAL where COD_ID='" + "" + "'");
+            connManager.updateDB("delete from INMUEBLE where COD_ID='" + "" + "'");
+                        
+            connManager.close();
+    	}
+    	catch (ClassNotFoundException ex) {
+            ex.printStackTrace();
+        }
+    	
+    	catch(DAOExcepcion ex){
+    		ex.printStackTrace();    		
+    	}
+    }
+
+}

@@ -1,0 +1,181 @@
+package persistencia;
+
+
+
+import java.util.List;
+
+import excepciones.DAOExcepcion;
+import logica.Asesor;
+import logica.Cliente;
+import logica.Inmueble;
+import logica.NaveIndustrial;
+import logica.Oferta;
+import logica.Piso;
+import logica.Transaccion;
+import logica.Visita;
+
+public final class DAL { // NOPMD by joseph on 8/01/15 21:37
+
+	private static DAL dal;
+	private IAsesorDAO asesorDAO;
+	private IClienteDAO clienteDAO;
+	private IPisoDAO pisoDAO;
+	private IInmuebleDAO inmuebleDAO;
+	private INaveIndustrialDAO naveindustrialDAO;
+	private IVisitaDAO visitaDAO;
+	private IOfertaDAO ofertaDAO;
+	private ITransaccionDAO transaccionDAO;
+	
+	
+	//Constructor privado
+	private DAL() throws DAOExcepcion {
+
+		asesorDAO = new AsesorDAOImp();
+		clienteDAO = new ClienteDAOImp();
+		pisoDAO = new PisoDAOImp();
+		inmuebleDAO = new InmuebleDAOImp();
+		naveindustrialDAO = new NaveIndustrialDAOImp();
+		visitaDAO = new VisitaDAOImp();
+		ofertaDAO = new OfertaDAOImp();
+		transaccionDAO = new TransaccionDAOImp();
+
+	}
+
+	//Patron Singleton
+	public static DAL getDAL() throws DAOExcepcion {
+		if(dal==null)
+			dal = new DAL();
+		return dal;
+	}
+
+	//Para el C.U. Consultar Clientes.
+	public List<Cliente> encontrarClientes() throws DAOExcepcion{
+		return clienteDAO.encontrarClientes();
+	}
+
+	//Para el C.U. Consultar Inmuebles
+	public List<Inmueble> encontrarInmuebles() throws DAOExcepcion {
+		return inmuebleDAO.encontrarInmuebles();
+	}
+
+	//Para el C.U. Consultar Asesores
+	public List<Asesor> encontrarAsesores() throws DAOExcepcion {
+		return asesorDAO.encontrarAsesores();
+	}
+
+	//Objeto DAL para encontrar un Asesor por Codigo.
+	public Asesor encontrarAsesorPorCod(String cod ) throws DAOExcepcion {
+		return asesorDAO.encontrarAsesorPorCod(cod);
+	}
+
+	//Objeto DAL para encontrar un Cliente por c�digo.
+	public Cliente encontrarClientePorCod(String nif) throws DAOExcepcion {
+		// TODO Auto-generated method stub
+		return clienteDAO.encontrarClientePorCod(nif);
+	}
+
+	//Objeto DAL para encontrar un inmueble por c�digo.
+	public Inmueble encontrarInmueblePorCod(String cod) throws DAOExcepcion {
+		// TODO Auto-generated method stub
+		return inmuebleDAO.encontrarInmueblePorCod(cod);
+	}
+	//Objeto DAL para encontrar un piso por c�digo.
+	public Piso encontrarPisoPorCod(String cod) throws DAOExcepcion{
+		return pisoDAO.encontrarPisoPorCod(cod);
+	}
+
+	//Objeto DAL para encontrar una NaveIndustrial por c�digo.
+	public NaveIndustrial encontrarNaveIndustrialPorCod(String c) throws DAOExcepcion {
+		// TODO Auto-generated method stub
+		return naveindustrialDAO.encontrarNaveIndustrialPorCod(c);
+	}
+	//Objeto DAL para encontrar una Visita por c�digo.
+	public Visita encontrarVisitaPorCod(String c) throws DAOExcepcion {
+		// TODO Auto-generated method stub
+		return visitaDAO.encontrarVisitaPorCod(c);
+	}
+	
+	//Objeto DAL para encontrar una Oferta por c�digo.
+	public Oferta encontrarOfertaPorCod(String c) throws DAOExcepcion {
+		// TODO Auto-generated method stub
+		return ofertaDAO.encontrarOfertaPorCod(c);
+	}
+	
+	//Objeto DAL para encontrar una Transaccion por c�digo.
+	public Transaccion encontrarTransaccionPorCod(String c) throws DAOExcepcion {
+		// TODO Auto-generated method stub
+		return transaccionDAO.encontrarTransaccionPorCod(c);
+	}
+	
+	//Dal para crear un piso.
+	public void crearPiso(Piso pi) throws DAOExcepcion {
+		pisoDAO.crearPiso(pi);
+	}
+
+	//Objeto DAL para crear un Asesor
+	public void crearAsesor(Asesor pi) throws DAOExcepcion {
+		// TODO Auto-generated method stub
+		asesorDAO.crearAsesor(pi);
+	}
+
+	//Objeto DAL para crear el cliente.
+	public void crearCliente(Cliente pi) throws DAOExcepcion {
+		// TODO Auto-generated method stub
+		clienteDAO.crearCliente(pi);
+	}
+	
+	//Objeto DAL para crear una Transacci�n
+	public void crearTransaccion(Transaccion vi) throws DAOExcepcion {
+		// TODO Auto-generated method stub
+		
+		transaccionDAO.crearTransaccion(vi);
+	}
+	
+	//Objeto DAL para crear una Oferta.
+	public void crearOferta(Oferta vi) throws DAOExcepcion {
+		// TODO Auto-generated method stub
+		ofertaDAO.crearOferta(vi);
+	}
+	
+	//Objeto DAL para crear un Inmueble.
+	public void crearInmueble(Inmueble pi) throws DAOExcepcion {
+		// TODO Auto-generated method stub
+		inmuebleDAO.crearInmueble(pi);
+	}
+	//Dal para crear una NaveIndustrial.
+	public void crearNaveIndustrial(NaveIndustrial pi) throws DAOExcepcion {
+		// TODO Auto-generated method stub
+		naveindustrialDAO.crearNaveIndustrial(pi);
+		
+	}
+
+	public List<Piso> encontrarPisos() throws DAOExcepcion {
+		// TODO Auto-generated method stub
+		return pisoDAO.encontrarPisos();
+	}
+
+	public List<NaveIndustrial> encontrarNaveIndustrial() throws DAOExcepcion {
+		// TODO Auto-generated method stub
+		return naveindustrialDAO.encontrarNavesIndustriales();
+	}
+	public void crearVisita(Visita vi) throws DAOExcepcion {
+		visitaDAO.crearVisita(vi);
+	}
+	
+	public List<Visita> encontrarVisita() throws DAOExcepcion {
+	return visitaDAO.encontrarVisitas();
+	
+	}
+
+	public List<Oferta> encontrarOfertas() throws DAOExcepcion {
+		// TODO Auto-generated method stub
+		return ofertaDAO.encontrarOfertas();
+	}
+
+	public List<Transaccion> encontrarTransaccion() throws DAOExcepcion {
+		// TODO Auto-generated method stub
+		return transaccionDAO.encontrarTransaccion();
+	}
+
+
+}//Fin de la clase DAL.

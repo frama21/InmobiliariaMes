@@ -1,0 +1,82 @@
+package persistencia;
+
+import java.util.*;
+import java.sql.*;
+
+import logica.NaveIndustrial;
+import excepciones.DAOExcepcion;
+import logica.Inmueble;
+
+
+public class NaveIndustrialDAOImp extends InmuebleDAOImp implements INaveIndustrialDAO{
+
+	public NaveIndustrial encontrarNaveIndustrialPorCod(String cod)throws DAOExcepcion{
+		try{
+			Inmueble in = encontrarInmueblePorCod(cod); 			
+			if (in != null)
+			{
+				connManager.connect();
+				ResultSet rs=connManager.queryDB("select * from NAVEINDUSTRIAL where COD_ID = '"+ cod +"'");
+				connManager.close();
+				
+				if (rs.next())
+					return new NaveIndustrial(cod, in.getCalle(), in.getLocalidad(), in.getFecha_alta(), 
+							in.getSuperficie_total(), in.getVenta_alquiler(),
+							rs.getString("NUM_PUERTAS"),rs.getString("CALIFICACION"),in.getAsesor(),in.getCliente());
+			}
+			return null;
+
+		}catch (Exception e){
+			throw new DAOExcepcion(e);
+		}
+	}
+	
+	@Override
+	public void crearNaveIndustrial(NaveIndustrial p)throws DAOExcepcion{
+		try{	
+			// Antes de crear la NaveIndustrial, creamos el inmueble
+			crearInmueble(new Inmueble(p.getCod_Id(), p.getCalle(), p.getLocalidad(), p.getFecha_alta(), p.getSuperficie_total(), 
+			p.getVenta_alquiler(),p.getAsesor(),p.getCliente())); 
+
+			
+			// Ahora creamos la NaveIndustrial.
+			connManager.connect();	
+			
+			
+			connManager.updateDB("insert into NAVEINDUSTRIAL (COD_ID, NUM_PUERTAS, CALIFICACION) " +
+					"values ('" + p.getCod_Id() + "', '" + p.getNum_puertas() + "', '" + p.getCalificacion() +"')"); 
+			connManager.close();
+			
+		}catch (Exception e){
+			throw new DAOExcepcion(e);
+		}
+	}
+	
+	@Override
+	public List<NaveIndustrial> encontrarNavesIndustriales() throws DAOExcepcion{
+		try{
+			connManager.connect();
+			ResultSet rs=connManager.queryDB("select * from NAVEINDUSTRIAL");						
+			connManager.close();
+
+			List<NaveIndustrial> listaNave=new ArrayList<NaveIndustrial>();
+			try{				
+				while (rs.next()){
+					NaveIndustrial p = encontrarNaveIndustrialPorCod(rs.getString("COD_ID"));	 
+					listaNave.add(p);
+				}
+				return listaNave;
+			}catch (Exception e){
+				throw new DAOExcepcion(e);
+			}
+		}catch (DAOExcepcion e){
+			throw e;
+		}	
+	}
+	
+	public NaveIndustrialDAOImp() throws DAOExcepcion {
+		super();  // inits and connects the connManager
+	}
+
+	
+}

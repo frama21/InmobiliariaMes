@@ -1,0 +1,311 @@
+package presentacion;
+
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.JTable;
+import javax.swing.JScrollPane;
+
+import logica.Controlador;
+import logica.Inmueble;
+import logica.Oferta;
+import logica.Visita;
+
+import javax.swing.ScrollPaneConstants;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Color;
+import java.awt.Font;
+
+import javax.swing.JLabel;
+import javax.swing.JComboBox;
+
+import excepciones.LogicaExcepcion;
+
+
+
+public class ConsultarVisitaOferta extends JDialog {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private final JPanel contentPanel = new JPanel();
+	private static Controlador control;
+	private JTable tableOferta;
+	private JTable tableVisita;
+	JComboBox<Inmueble> comboBoxInmueble;
+
+	/**
+	 * Launch the application.
+	 */
+
+	public static void main(String... args) {
+		try {
+			ConsultaPisosJDialog dialog = new ConsultaPisosJDialog( control);
+			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+			dialog.setVisible(true);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	//Inicialización de los objetos necesarios de la capa de negocio
+	private void initDominio() {
+		try{
+			control = Controlador.dameControlador();
+		}catch (Exception e){
+			Logger log = Logger.getLogger(ConsultarVisitaOferta.class.getName());
+        	if (log.isLoggable(Level.FINE))
+        		log.fine(e.getMessage());
+		}
+	}
+
+
+	/**
+	 * Create the dialog.
+	 */
+	public ConsultarVisitaOferta(Controlador control1) {
+		setBackground(new Color(255, 255, 255));
+
+		//Método que inicializa el controlador.
+		initDominio();
+
+		setBounds(100, 100, 957, 788);
+		getContentPane().setLayout(new BorderLayout());
+		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
+		getContentPane().add(contentPanel, BorderLayout.CENTER);
+		setTitle("Consultar Visitas y Ofertas");
+		contentPanel.setLayout(null);
+		{
+			JScrollPane scrollPane = new JScrollPane();
+			scrollPane.setLocation(10, 400);
+			scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+			scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+
+
+			scrollPane.setSize(921,286);
+
+
+			contentPanel.add(scrollPane);
+			{
+				tableOferta = new JTable(new DefaultTableModel());
+				tableOferta.setFont(new Font("Tahoma", Font.BOLD, 12));
+				tableOferta.setBackground(Color.WHITE);
+				scrollPane.setViewportView(tableOferta);
+			}
+		}
+		{
+			JScrollPane scrollPane = new JScrollPane();
+			scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+			scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+			scrollPane.setBounds(10, 82, 921, 264);
+			contentPanel.add(scrollPane);
+
+			tableVisita = new JTable(new DefaultTableModel());
+			tableVisita.setFont(new Font("Tahoma", Font.BOLD, 12));
+			tableVisita.setBackground(Color.WHITE);
+			scrollPane.setViewportView(tableVisita);
+		}
+
+		JLabel lblListadoDeLos = new JLabel("LISTADO DE LOS INMUEBLES CON SUS VISITAS ASOCIADAS");
+		lblListadoDeLos.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblListadoDeLos.setBounds(282, 38, 467, 14);
+		contentPanel.add(lblListadoDeLos);
+
+		JLabel listaOfertasLabel = new JLabel("OFERTAS ASOCIADAS A LAS VISITAS POR INMUEBLE");
+		listaOfertasLabel.setFont(new Font("Tahoma", Font.BOLD, 14));
+		listaOfertasLabel.setBounds(282, 363, 467, 14);
+		contentPanel.add(listaOfertasLabel);
+		
+		 comboBoxInmueble = new JComboBox<Inmueble>();
+		
+		//Para que aparezcan todas las visitas de la base de datos en el ComboBox.
+		try {
+			java.util.List<Inmueble> inmuebles= control.encontrarInmuebles();
+
+			for(int i=0;i<inmuebles.size();i++){
+				comboBoxInmueble.addItem(inmuebles.get(i));
+
+			}
+		} catch (LogicaExcepcion e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		
+		
+		comboBoxInmueble.setBounds(22, 37, 152, 20);
+		contentPanel.add(comboBoxInmueble);
+		
+		JButton btnBuscar = new JButton("Buscar");
+		btnBuscar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				//Modelo por defecto que añadiremos a nuestra tabla.
+				DefaultTableModel model = (DefaultTableModel) tableVisita.getModel();
+				DefaultTableModel model1 = (DefaultTableModel) tableOferta.getModel();
+				
+				if (tableVisita.getColumnCount()>0) {
+	                model.setColumnCount(0);
+	                model.setRowCount(0);
+	            }
+				
+				if(tableOferta.getColumnCount()>0) {
+					model1.setColumnCount(0);
+					model1.setRowCount(0);
+				}
+				
+				cargaInmueblesVisita();
+				cargaInmueblesOferta();
+				
+			}
+		});
+		btnBuscar.setBounds(184, 36, 88, 23);
+		contentPanel.add(btnBuscar);
+		{
+			JPanel buttonPane = new JPanel();
+			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
+			getContentPane().add(buttonPane, BorderLayout.SOUTH);
+			{
+				JButton cancelButton = new JButton("Volver");
+				cancelButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						//Cierra la ventana de crear asesor.
+						setVisible(false);
+					}
+				});
+				cancelButton.setActionCommand("Cancel");
+				buttonPane.add(cancelButton);
+			}
+		}
+	}
+
+
+	//Se invoca desde fuera de ésta clase.
+	public void cargaInmueblesVisita() {
+		try{
+			//ArrayList<Inmueble> listaInmuebles = (ArrayList<Inmueble>) control.encontrarInmuebles();
+
+
+			ArrayList<Visita> listaVisitas = (ArrayList<Visita>) control.encontrarVisitas();
+
+			//Inmueble que usaremos para buscar sus Visitas.
+			Inmueble inmu = (Inmueble) comboBoxInmueble.getSelectedItem();
+
+
+			//Modelo por defecto que añadiremos a nuestra tabla.
+			DefaultTableModel model = (DefaultTableModel) tableVisita.getModel();
+
+			//Añadimos las columnas a la tabla.
+			model.addColumn("Codigo Inmueble");
+			model.addColumn("Calle");
+			model.addColumn("Localidad");
+			model.addColumn("Fecha de Alta");
+			model.addColumn("Superficie");
+			model.addColumn("Venta/Alquiler");
+			model.addColumn("Código Visita");
+			model.addColumn("Fecha Visita");
+			model.addColumn("Cliente Visita");
+			model.addColumn("Asesor Visita");
+
+
+			//Incluye los inmuebles con sus Visitas/Ofertas.
+			//for(int i=0; i<listaInmuebles.size(); i++) {
+				for(int j = 0; j<listaVisitas.size(); j++) {
+
+					if(inmu.getCodId().trim().equals(listaVisitas.get(j).getInm().getCodId().trim())) {
+
+						Object nuevo[]= {inmu.getCodId(), inmu.getCalle(), inmu.getLocalidad(),
+								inmu.getFechaAlta(), 
+								inmu.getSuperficieTotal(),
+								inmu.getVentaAlquiler(),
+								listaVisitas.get(j).getCod(),
+								listaVisitas.get(j).getFecha(),
+								listaVisitas.get(j).getCliente(), listaVisitas.get(j).getAsesor()};
+
+						model.addRow(nuevo);
+
+					}
+				}
+			//}
+
+
+
+		}catch (Exception e){
+			JOptionPane.showMessageDialog(this,e.getMessage(),"ERROR AL MOSTRAR",JOptionPane.ERROR_MESSAGE);
+		}
+	}
+	
+	//Se invoca desde fuera de ésta clase.
+		public void cargaInmueblesOferta() {
+			try{
+				//Lista con todos los inmuebles de la base de datos.
+				//ArrayList<Inmueble> listaInmuebles = (ArrayList<Inmueble>) control.encontrarInmuebles();
+
+				ArrayList<Visita> listaVisitas = (ArrayList<Visita>) control.encontrarVisitas();
+				
+				//Lista con todas las ofertas de la base de datos.
+				ArrayList<Oferta> listaOfertas = (ArrayList<Oferta>) control.encontrarOfertas();
+
+				//Inmueble que usaremos para buscar sus Visitas.
+				Inmueble inmu = (Inmueble) comboBoxInmueble.getSelectedItem();
+
+				//Modelo por defecto que añadiremos a nuestra tabla.
+				DefaultTableModel model = (DefaultTableModel) tableOferta.getModel();
+
+				//Añadimos las columnas a la tabla.
+				model.addColumn("Codigo Inmueble");
+				model.addColumn("Calle");
+				model.addColumn("Localidad");
+				model.addColumn("Fecha de Alta");
+				model.addColumn("Superficie");
+				model.addColumn("Venta/Alquiler");
+				model.addColumn("Código Oferta");
+				model.addColumn("Precio Oferta");
+				model.addColumn("Fecha Oferta");
+				
+				
+
+
+				//Incluye los inmuebles con sus Visitas/Ofertas.
+				for(int i=0; i<listaVisitas.size(); i++) {
+					for(int j = 0; j<listaOfertas.size(); j++) {
+						
+						//Para que solo salga la oferta asociada a esa visita.
+						if(inmu.getCodId().trim().equals(listaVisitas.get(i).getInm().getCodId().trim())) {
+						if(listaOfertas.get(j).getVisita().getCod().trim().equals(listaVisitas.get(i).getCod().trim())) {
+						 
+
+							Object nuevo[]= {inmu.getCodId(), inmu.getCalle(), inmu.getLocalidad(),
+									inmu.getFechaAlta(), 
+									inmu.getSuperficieTotal(),
+									inmu.getVentaAlquiler(), 
+									listaOfertas.get(j).getCod(),
+									listaOfertas.get(j).getPrecio(),
+									listaOfertas.get(j).getFecha()};
+
+							model.addRow(nuevo);
+
+						}//Fin del if que filtra visita por inmueble.
+						}//Fin del if que filtra ofertas por visitas
+						
+					}//Fin del jor de las J
+				}
+
+
+
+			}catch (Exception e){
+				JOptionPane.showMessageDialog(this,e.getMessage(),"ERROR AL MOSTRAR",JOptionPane.ERROR_MESSAGE);
+			}
+		}//Fin de las ofertas.
+}//Fin de la clase ConsultaInmueblesJDialog.
+
